@@ -1,0 +1,8 @@
+#Class Manifest File
+#Wed Jul 23 15:32:28 EEST 2003
+HelpPath=./help/ext_textedit.html
+Created-By=org.magelan.editor.ClassManifest
+ClassName=org.magelan.editor.extension.EditText
+Info=Edits a the selected text entities.
+Manifest-Version=1.0
+ClassPath=.

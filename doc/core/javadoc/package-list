@@ -1,0 +1,12 @@
+org.magelan.core
+org.magelan.core.db
+org.magelan.core.editor
+org.magelan.core.entity
+org.magelan.core.renderer
+org.magelan.core.style
+org.magelan.core.util
+org.magelan.core.variant
+org.magelan.drawing
+org.magelan.drawing.element
+org.magelan.drawing.geom
+org.magelan.drawing.markup

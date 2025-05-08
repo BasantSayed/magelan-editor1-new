@@ -1,0 +1,125 @@
+24:51.160 DEBUG [Editor] manager.getMainFrame().show();
+25:02.509 INFO  [AbstractEditorExtension] Executing: org.magelan.editor.commands.NewDrawing
+25:02.530 INFO  [SingleFrameEditorManager] Opening new editor
+25:03.722 INFO  [AbstractEditorExtension] Executing: org.magelan.editor.extension.NewHexagon
+25:27.001 INFO  [SingleFrameEditorManager] Exitting the editor...
+25:27.001 DEBUG [SingleFrameEditorManager] exit();
+25:28.235 INFO  [SingleFrameEditorManager] Closing editor
+25:28.254 DEBUG [Editor] shutdown();
+25:28.264 INFO  [Editor] --->
+30:45.219 INFO  [Editor] <---
+30:45.226 DEBUG [Editor] create(1);
+30:45.471 WARN  [Editor] Classpath entry does not exist: .\build
+30:45.471 WARN  [Editor] Classpath entry does not exist: D:\magelan\transport\bin
+30:45.473 WARN  [Editor] Classpath entry does not exist: D:\magelan\magelan-statistics\bin
+30:45.473 WARN  [Editor] Classpath entry does not exist: D:\magelan\transport\lib\jackcess-1.1.8.jar
+30:45.474 DEBUG [Editor] <init>;
+30:45.589 DEBUG [SingleFrameEditorManager] <init>;
+30:45.680 DEBUG [Editor] start();
+30:45.681 INFO  [Editor] [Magelan 1.0 RC4; Thu May 08 13:30:45 EEST 2025]
+30:45.681 DEBUG [Editor] Creating splash screen
+30:45.910 DEBUG [Editor] Initializing templates
+30:45.911 WARN  [Editor] Classpath entry does not exist: .\build
+30:45.912 WARN  [Editor] Classpath entry does not exist: D:\magelan\transport\bin
+30:45.912 WARN  [Editor] Classpath entry does not exist: D:\magelan\magelan-statistics\bin
+30:45.912 WARN  [Editor] Classpath entry does not exist: D:\magelan\transport\lib\jackcess-1.1.8.jar
+30:45.914 INFO  [Editor] Start loading extensions
+30:45.927 DEBUG [DefaultExtensionManager] Adding: Point
+30:45.976 DEBUG [DefaultExtensionManager] Adding: Line
+30:45.979 DEBUG [DefaultExtensionManager] Adding: Poly Line
+30:45.980 DEBUG [DefaultExtensionManager] Adding: Hatch
+30:45.983 DEBUG [DefaultExtensionManager] Adding: Circle
+30:45.985 DEBUG [DefaultExtensionManager] Adding: Text
+30:45.989 DEBUG [DefaultExtensionManager] Adding: Ellipse
+30:45.991 DEBUG [DefaultExtensionManager] Adding: Rectangle
+30:45.994 DEBUG [DefaultExtensionManager] Adding: Image
+30:45.997 DEBUG [DefaultExtensionManager] Adding: Label
+30:46.001 DEBUG [DefaultExtensionManager] Adding: View
+30:46.003 DEBUG [DefaultExtensionManager] Adding: Zoom In
+30:46.010 DEBUG [DefaultExtensionManager] Adding: Zoom Out
+30:46.012 DEBUG [DefaultExtensionManager] Adding: Zoom Realtime
+30:46.014 DEBUG [DefaultExtensionManager] Adding: Pan
+30:46.017 DEBUG [DefaultExtensionManager] Adding: Layer Control
+30:46.094 DEBUG [DefaultExtensionManager] Adding: ChangeLayer
+30:46.096 DEBUG [DefaultExtensionManager] Adding: Colors
+30:46.098 DEBUG [DefaultExtensionManager] Adding: Edit Text
+30:46.100 DEBUG [DefaultExtensionManager] Adding: Explode
+30:46.103 DEBUG [DefaultExtensionManager] Adding: Change Line Style
+30:46.111 DEBUG [DefaultExtensionManager] Adding: Change Thickness
+30:46.124 DEBUG [DefaultExtensionManager] Adding: Text Styles Control
+30:46.160 DEBUG [DefaultExtensionManager] Adding: Memory Monitor
+30:46.164 DEBUG [DefaultExtensionManager] Adding: Compound Renderers Control
+30:46.168 DEBUG [DefaultExtensionManager] Adding: Properties
+30:46.238 DEBUG [DefaultExtensionManager] Adding: Explorer
+30:46.320 DEBUG [DefaultExtensionManager] Adding: Layers
+30:46.338 INFO  [Editor] Starting the editor
+30:46.338 DEBUG [SingleFrameEditorManager] initialize();
+30:46.373 DEBUG [DefaultExtensionManager] Adding: Assistance
+30:46.383 DEBUG [DefaultExtensionManager] Adding: Hexagon
+30:46.386 DEBUG [Editor] manager.getMainFrame().show();
+30:51.796 INFO  [AbstractEditorExtension] Executing: org.magelan.editor.commands.NewDrawing
+30:51.819 INFO  [SingleFrameEditorManager] Opening new editor
+30:52.813 INFO  [AbstractEditorExtension] Executing: org.magelan.editor.extension.NewHexagon
+33:57.871 INFO  [SingleFrameEditorManager] Exitting the editor...
+33:57.875 DEBUG [SingleFrameEditorManager] exit();
+33:59.184 INFO  [SingleFrameEditorManager] Closing editor
+33:59.205 DEBUG [Editor] shutdown();
+33:59.215 INFO  [Editor] --->
+40:34.476 INFO  [Editor] <---
+40:34.481 DEBUG [Editor] create(1);
+40:34.673 WARN  [Editor] Classpath entry does not exist: .\build
+40:34.674 WARN  [Editor] Classpath entry does not exist: D:\magelan\transport\bin
+40:34.674 WARN  [Editor] Classpath entry does not exist: D:\magelan\magelan-statistics\bin
+40:34.674 WARN  [Editor] Classpath entry does not exist: D:\magelan\transport\lib\jackcess-1.1.8.jar
+40:34.675 DEBUG [Editor] <init>;
+40:34.772 DEBUG [SingleFrameEditorManager] <init>;
+40:34.859 DEBUG [Editor] start();
+40:34.860 INFO  [Editor] [Magelan 1.0 RC4; Thu May 08 13:40:34 EEST 2025]
+40:34.860 DEBUG [Editor] Creating splash screen
+40:35.065 DEBUG [Editor] Initializing templates
+40:35.066 WARN  [Editor] Classpath entry does not exist: .\build
+40:35.067 WARN  [Editor] Classpath entry does not exist: D:\magelan\transport\bin
+40:35.067 WARN  [Editor] Classpath entry does not exist: D:\magelan\magelan-statistics\bin
+40:35.067 WARN  [Editor] Classpath entry does not exist: D:\magelan\transport\lib\jackcess-1.1.8.jar
+40:35.069 INFO  [Editor] Start loading extensions
+40:35.081 DEBUG [DefaultExtensionManager] Adding: Point
+40:35.124 DEBUG [DefaultExtensionManager] Adding: Line
+40:35.127 DEBUG [DefaultExtensionManager] Adding: Poly Line
+40:35.129 DEBUG [DefaultExtensionManager] Adding: Hatch
+40:35.131 DEBUG [DefaultExtensionManager] Adding: Circle
+40:35.133 DEBUG [DefaultExtensionManager] Adding: Text
+40:35.136 DEBUG [DefaultExtensionManager] Adding: Ellipse
+40:35.138 DEBUG [DefaultExtensionManager] Adding: Rectangle
+40:35.141 DEBUG [DefaultExtensionManager] Adding: Image
+40:35.143 DEBUG [DefaultExtensionManager] Adding: Label
+40:35.148 DEBUG [DefaultExtensionManager] Adding: View
+40:35.150 DEBUG [DefaultExtensionManager] Adding: Zoom In
+40:35.156 DEBUG [DefaultExtensionManager] Adding: Zoom Out
+40:35.158 DEBUG [DefaultExtensionManager] Adding: Zoom Realtime
+40:35.161 DEBUG [DefaultExtensionManager] Adding: Pan
+40:35.163 DEBUG [DefaultExtensionManager] Adding: Layer Control
+40:35.229 DEBUG [DefaultExtensionManager] Adding: ChangeLayer
+40:35.231 DEBUG [DefaultExtensionManager] Adding: Colors
+40:35.234 DEBUG [DefaultExtensionManager] Adding: Edit Text
+40:35.236 DEBUG [DefaultExtensionManager] Adding: Explode
+40:35.238 DEBUG [DefaultExtensionManager] Adding: Change Line Style
+40:35.247 DEBUG [DefaultExtensionManager] Adding: Change Thickness
+40:35.259 DEBUG [DefaultExtensionManager] Adding: Text Styles Control
+40:35.286 DEBUG [DefaultExtensionManager] Adding: Memory Monitor
+40:35.290 DEBUG [DefaultExtensionManager] Adding: Compound Renderers Control
+40:35.294 DEBUG [DefaultExtensionManager] Adding: Properties
+40:35.339 DEBUG [DefaultExtensionManager] Adding: Explorer
+40:35.412 DEBUG [DefaultExtensionManager] Adding: Layers
+40:35.426 INFO  [Editor] Starting the editor
+40:35.426 DEBUG [SingleFrameEditorManager] initialize();
+40:35.455 DEBUG [DefaultExtensionManager] Adding: Assistance
+40:35.464 DEBUG [DefaultExtensionManager] Adding: Hexagon
+40:35.466 DEBUG [Editor] manager.getMainFrame().show();
+41:14.515 INFO  [AbstractEditorExtension] Executing: org.magelan.editor.commands.NewDrawing
+41:14.535 INFO  [SingleFrameEditorManager] Opening new editor
+41:15.532 INFO  [AbstractEditorExtension] Executing: org.magelan.editor.extension.NewHexagon
+42:55.551 INFO  [SingleFrameEditorManager] Exitting the editor...
+42:55.551 DEBUG [SingleFrameEditorManager] exit();
+42:56.829 INFO  [SingleFrameEditorManager] Closing editor
+42:56.844 DEBUG [Editor] shutdown();
+42:56.852 INFO  [Editor] --->

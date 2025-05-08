@@ -1,0 +1,6 @@
+Created-By=
+HelpPath=./help/ext_comp_renderer_manager.html
+Info=Manages compound renderers and their decorators.
+ClassName=org.magelan.editor.extension.CompoundRendererManager
+Manifest-Version=1.0
+ClassPath=.

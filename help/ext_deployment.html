@@ -1,0 +1,42 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html">
+  <link href="help.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<!-- Title -->
+<table border="0" cellspacing="0" width="100%"><tr>
+	<td><p class="title">Deployment of Extensions</p></td>
+	<td align="right"><img src="bluegear.gif"></td>
+</tr></table><hr class="title" size=1 color="#000077">
+
+<strong>Menu:</strong>&nbsp&nbsp
+Extensions | Manage
+
+<h2>Deployment of a single extension</h2>
+Select the <strong>Manifests</strong> tab and add the manifest file name to the list of 
+known manifests. If the file cannot be located an error icon will appear next to 
+its name. 
+
+<h2>Deployment of multiple extensions</h2>
+Select the <strong>Paths</strong> tab and add the directory the manifest file is located in. Again if the directory cannot be found an error icon will appear next to it. To add all manifests located in the listed directories to the list of known manifests, choose the <strong>Scan</strong> button. This option is useful for deployment of multiple extensions. 
+
+<h2>Automatic loading of extensions</h2>
+If the <strong>Auto find and load</strong> option from the <strong>Preferences | Workspace</strong> dialog is selected the editor will ignore the manifests listed in the <strong>Manifests</strong> tab of the extension manager dialog. It will instead scan the directories listed in the <strong>Paths</strong> tab (much as the <strong>Scan</strong> button will) for manifest files and load their corresponding extensions. The drawback is that the user cannot influence the order the extensions will appear in the editor the next time it is started. This option is turned off by default. 
+
+<p>
+<strong>See also:</strong><br>
+|
+<a href="workspace.html">Workspace Manager</a> |
+</p>
+
+<h2>Changing the order of loading of extensions</h2>
+The order of  manifest files (which is also the order they will be read and the extensions loaded and placed in the toolbars the next time the editor is started) can be changed by dragging them with the right mouse button. To edit a manifest, choose the <strong>Edit</strong> button 
+
+<!-- UP -->
+<p><strong>»</strong> <a href="ext.html">up</a></p>
+
+</body>
+</html>

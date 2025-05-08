@@ -1,0 +1,154 @@
+<html>
+<head>
+  <title>Magelan Editor Framework (core 1.0)</title>
+  <meta http-equiv="Content-Type" content="text/html">
+  <link href="classic.css" rel="stylesheet" type="text/css">
+</head>
+
+<body size=80%>
+	<p class="title"><font face="Tahoma" size=+1>
+		Magelan Graphics Editor Framework (core 1.0)
+	</font></p>
+	<p class="sub"><font face="Arial" size=+1>
+		Getting Started
+	</font></p>
+	<p>
+	<ul>
+		<li><a href="http://magelan.sourceforge.net/">
+			The Magelan Project Homepage
+		</a></li>
+		<li><a href="https://sourceforge.net/projects/magelan/">
+			The Magelan Project at SourceForge.net
+		</a></li>
+		<li><a href="https://sourceforge.net/project/showfiles.php?group_id=73971">
+			Download the newest releases
+		</a></li>
+		<li><a href="https://sourceforge.net/tracker/?func=add&group_id=73971&atid=539550">
+			Send a bugfix
+		</a></li>
+		<li><a href="https://sourceforge.net/tracker/?func=add&group_id=73971&atid=539553">
+			Request a feature
+		</a></li>
+	</ul>
+	<p>
+	
+	<p class="title">Overview</p>
+	<p>The Magelan project aims to provide a set of easy to use and
+	incorporate Java 2D vector graphics editor components.
+	<p>
+	It is divided into two parts: <br>
+	<ul>
+		<li><b>core</b><p>
+		The core library defines powerful drawing and editor 
+		models, as well as basic viewer and editor <i>Swing</i> components. 
+		It is intended as a platform for the development of 
+		graphics editors and related products. <p>
+		The library is 
+		also very convenient to use for all kinds of visualisation
+		tasks and in applications where simple graphical 
+		user input is required. If more complex behavior is 
+		required, the editor library should be used.<p>
+		The editor <i>Swing</i> component features 
+		selection and drag and drop editing of entities (stretching and 
+		moving). <p>
+		The core comes with a set of 
+		pre-defined entities. It includes not only basic entities like lines, 
+		circles, polylines, etc. but a number of more sophisticated ones 
+		like dynamic labels, which display a chosen property of an entity; 
+		block definitions and views. <p>
+		Finally, the offered drawing and
+		editor models are not only powerful and flexible, but very 
+		easy to use and extend, and new entities are simple to write.</li>
+	</ul>
+	<ul>
+		<li><b>editor</b><p>
+		The editor uses and further extends the drawing and
+		editor models, defined in the core library, and
+		provides a basic stand-alone editor implementation. <p>
+		A number of editor extensions (tools) are included in
+		it. They allow the user to create and edit 
+		graphical entities, as well as to navigate 
+		through the drawing and perform various operations on it. <p>
+		The editor supports a number of file formats, most notably
+		it is able to read and write basic <i>DXF</i> files. It can
+		also export drawings to <i>EPS</i> and <i>SVG</i> formats. <p>
+		Extensions are very easy to create, maintain and plug 
+		into the editor component.</li>
+	</ul>
+	<p>
+	<b><u>Note:</u></b> For more information regarding the editor, 
+	please refer to the documentation bundled with it.
+	<p>
+	
+	<p class="title">License<p>
+	The <b>core</b> library is licensed under a 
+	<a href="LICENSE.txt">BSD License</a>. 
+	Use only subject to the terms of this license agreement.
+	<p>
+
+	<p class="title">Distribution Package</p>
+		<p>
+		The structure of the distribution package is as follows: <br>
+		<ul>
+			<li><b>bin</b> folder, containing <b>magelan-core.jar</b> with the compiled and ready 
+			for use library;</li>
+			<li><b>src</b> folder, containing all source files;</li>
+			<li><b>doc</b> folder, containing all documentation, 
+			including <i>JavaDoc</i>s;</li>
+			<li><b>lib</b> folder, containing all necessary 
+			libraries;</li>
+		</ul>
+
+		<p>
+		To see a demo of the library, execute the <b>magelan-core.jar</b> 
+		file. <p>
+		<b><u>Note:</b></u> the <b>magelan-commons.jar</b> file from <b>/lib</b> 
+		must be placed in the same folder as the <b>magelan-core.jar</b> file.
+		<p>
+	
+	<p class="title">Documentation</p><p>
+		The following documentation is available:
+		<p>
+		<table>
+		<tr><td><img src="new.gif" border=0></td><td>
+		<a href="Magelan Framework Core.html">Detailed description of the core</a>
+		</td></tr>
+		<tr><td><img src="new.gif" border=0></td><td>
+		<a href="Entities Guide.html">Guide to writing graphical entities</a><br>
+		</td></tr>
+		<tr><td><img src="new.gif" border=0></td><td>
+		<a href="javadoc/index.html"><i>JavaDoc</i> generated documentation</a><br>
+		</td></tr>
+		</table>
+		<p>
+	
+	<p class="title">Relevant Links</p><p>
+		If you are interested in this library, you may also wish to visit the site below:
+		<p>
+		
+		<a href="http://jdrawing.sourceforge.net/">JDrawing</a><br>
+			The project features a simple to use but very flexible and easily 
+			extendible vector graphics framework. It allows efficient rendering of thousands of entities.
+			It is inherently similar to the <b>core</b> library. To bring the similarities further, some of
+			the excellent design solutions of <b>JDrawing</b> were implemented in this library. 
+			<p>
+		<p>
+	
+	<p class="title">Acknowledgement</p>
+	<p>Project development is hosted on:<br>
+	<A href="http://sourceforge.net">
+	<IMG border=0 src="http://sourceforge.net/sflogo.php?group_id=73971&amp;type=5" width="210" 
+	height="62" border="0" alt="SourceForge.net"></A> 
+	<p>
+	
+	<p class="title">Document Info</p>
+		<p>
+		Creation Date: 27/03/2003<br>
+		Author: <a href="mailto:aantov@users.sourceforge.net">Assen Antov</a><br>
+		Revision: 3<br>
+		Revision Date: 21/01/2006<br>
+		Revised By: <a href="mailto:aantov@users.sourceforge.net">Assen Antov</a><p>
+
+</body>
+
+</html>

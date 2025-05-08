@@ -1,0 +1,332 @@
+<html>
+<head>
+  <title>Magelan Editor Framework (core 1.0)</title>
+  <meta http-equiv="Content-Type" content="text/html">
+  <link href="classic.css" rel="stylesheet" type="text/css">
+</head>
+
+<body size=80%>
+	<p class="title"><font face="Tahoma" size=+1>
+		Magelan Graphics Editor Framework (core 1.0)
+	</font></p>
+	<p class="sub"><font face="Arial" size=+1>
+		Gude to Writing Entities
+	</font></p>
+	<p>
+	
+	<p class="title"><a name="contents">Contents</a></p>
+	<br>
+	<ul>
+		<li><a href="#entity">The Entity Interface</a></li>
+		<li><a href="#modifier">The EntityModifier Interface</a></li>
+		<li><a href="#rotatable">The RotatableEntity Interface</a></li>
+		<li><a href="#explodable">The ExplodableEntity Interface</a></li>
+		<li><a href="LineEntity.java">An example entity</a></li>
+	</ul>
+	<p>
+	
+	<p class="title"><a name="entity">The <u>Entity</u> Interface</a></p>
+	<p>
+	The <a href="javadoc/org/magelan/core/Entity.html">Entity</a> interface specifies a number
+	of methods defining how an entity should look and behave. 
+	It extends the
+	<a href="javadoc/org/magelan/drawing/DrawingElement.html">DrawingElement</a>
+	interface and adds to it methods to manipulate entity's layer, color, styles, etc.
+	<p>
+	Note that to create a new entity one could extend the 
+	<a href="javadoc/org/magelan/core/DefaultEntity.html">DefaultEntity</a> class.
+	Normally it is only necessary to override the 
+	<code>public Shape getShape()</code> and <code>public EntityModifier[] getModifiers()</code>
+	methods.
+	<p>
+	
+	<p class="sub"><code>public Shape getShape()</code></p>
+	<p>
+	This method will return the representing <code>java.awt.Shape</code>
+	of the <code>Entity</code>. 
+	<p>
+	Drawing implementations will use the returned data to 
+	calculate their new extents, when an entity is added. 
+	Even more important, editor implementations use it to
+	determine which entities are possibly affected by 
+	user actions.
+	<p>
+	The returned shape also allows the editor to determine 
+	which entities to select or deselect. 
+	<p>
+	It is important to note that although
+	<code>DrawingRenderer</code>s will generally call this method 
+	to obtain the shape of the entity, this may not always be the case. 
+	<code>DrawingRenderer</code>s may completely change the 
+	shape of the entity as it would be returned by this method.
+	<p>
+	
+	<p class="sub"><code>public EntityModifier[] getModifiers()</code></p>
+	<p>
+	Entities are expected to return a list of their modifying
+	instances with this method. There is no limit to the number
+	of modifiers returned and they do not have to be persistent.
+	The number of modifiers and the modifier instances 
+	themselves can be different each time this method 
+	is called.
+	<p>
+	The <code>EntityModifier</code> is a simple interface used
+	to define the behaviour of an entity. Modifiers are typically
+	created as anonymous classes within an <code>Entity</code> and
+	can be either cached or dynamicaly created.
+	They modify the parent class using the coordinates provided
+	to them. <code>EntityModifier</code>s are an important component of
+	the package and are discussed in detail	later on.
+	<p>
+	
+	<p class="sub"><code>public void paint(Graphics2D g, DrawingModel model)</code></p>
+	<p>
+	The <code>Entity</code> should use this method to paint itself
+	to the passed <code>Graphics2D</code> context, using the
+	data from the <code>DrawingModel</code> parameter to obtain
+	rendering information.
+	<p>
+	To simplify the task, entities can rely on receiving 
+	a <code>Graphics2D</code> context configured with their
+	proper color, line style, text style, line thickness and
+	font. Typically they will not need to access the
+	<code>DrawingModel</code> parameter, which is provided for
+	exceptional cases. Such cases are composite 
+	entities, containing a number of other entities that may be in
+	<code>Layer</code>s other than the <code>Layer</code>
+	of the parent entity. To display them correctly the
+	composite <code>Entity</code> will have to obtain the 
+	rendering information from the available
+	<code>DrawingModel</code> and then configure the 
+	<code>Graphics2D</code> context by itself.
+	<p>
+	Note that the 
+	<code>DrawingModel</code>, passed to the entity,
+	is not necessarily the <code>DrawingModel</code> instance, which
+	contains the entity. 
+	<p>
+	It is also important to note that although
+	<code>DrawingRenderer</code>s will generally call this method 
+	to render the entity, this may not always be the case. 
+	<code>DrawingRenderer</code>s may completely change the 
+	appearance of the entity as it would be painted by this method.
+	<p>
+	
+	<p class="sub"><code>public Object clone()</code></p>
+	<p>
+	This method will return a new <code>Entity</code>,
+	identical to the current one. The resulting 
+	<code>Entity</code> is not added by this method to any 
+	<code>DrawingModel</code> and no action other than merely 
+	creating an identical instance is taken.
+	<p>
+	Correct and efficient implementation of this method is important for
+	the work of <code>Variant</code>s.
+	<p>
+	
+	<p class="sub"><code>public boolean equals(Object obj)</code></p>
+	<p>
+	Checks whether the parameter object is identical to the entity.
+	<p>
+	Correct and efficient implementation of this method is important for
+	the work of <code>Variant</code>s.
+	<p>
+	
+	<p class="sub"><code>public Layer getLayer()</code></p>
+	<p class="sub"><code>public void setLayer(Layer layer)</code></p>
+	<p>
+	These methods will return or set the <code>Layer</code>
+	the <code>Entity</code> is situated on.
+	<p>
+	The <code>Layer</code> is used to contain information
+	regarding the color, line style, text style, line thickness 
+	and rendering hints of its entities. Note however, that the 
+	values of these properties as defined in the entities
+	override the values specified in the <code>Layer</code> 
+	instance.
+	<p>
+	
+	<p class="sub"><code>public Color getColor()</code></p>
+	<p class="sub"><code>public void setColor(Color color)</code></p>
+	<p>
+	Return or set the <code>java.awt.Color</code> of
+	the <code>Entity</code>.
+	<p>
+	If the color property is set to <code>null</code>, the
+	color of the <code>Layer</code> will be used instead.
+	<p>
+	
+	<p class="sub"><code>public LineStyle getLineStyle()</code></p>
+	<p class="sub"><code>public void setLineStyle(LineStyle lineStyle)</code></p>
+	<p>
+	Return or set the <code>LineStyle</code> of
+	the <code>Entity</code>.
+	<p>
+	If the line style property is set to <code>null</code>, the
+	line style of the containing <code>Layer</code> will be used.
+	<p>
+	
+	<p class="sub"><code>public TextStyle getTextStyle()</code></p>
+	<p class="sub"><code>public void setTextStyle(TextStyle textStyle)</code></p>
+	<p>
+	Return or set the <code>TextStyle</code> of
+	the <code>Entity</code>.
+	<p>
+	If the text style property is set to <code>null</code>, the
+	text style of the containing <code>Layer</code> will be used.
+	<p>
+	
+	<p class="sub"><code>public int getThickness()</code></p>
+	<p class="sub"><code>public void setThickness(int thickness)</code></p>
+	<p>
+	Return or set the brush thickness that should be used 
+	to display the <code>Entity</code>.
+	<p>
+	If the thickness property is set to <code>0</code>, the
+	thickness specified by the containing <code>Layer</code> 
+	will be used.
+	<p>
+	
+	<a href="#contents"><b>�</b> <i>back to top</i></a>
+	<p>
+	
+	
+	<p class="title"><a name="modifier">The <u>EntityModifier</u> Interface</a></p>
+	<p>
+	This interface defines a number of easy to implement unified
+	methods, used to modify an <code>Entity</code>. It is expected
+	that the entities maintain a set of <code>EntityModifier</code>s
+	assosiated with their specific points. In terms of geometry
+	such points are end, center, middle, quadrant and others. In
+	terms of their function these points can be used for moving 
+	or stretching the entity. 
+	<p>
+	
+	<p class="sub"><code>public void modify(double x, double y)</code></p>
+	<p>
+	This method will modify the parent <code>Entity</code>
+	in accordance with the given coordinates. Editors will
+	use it when an attempt to drag a certain modifier is 
+	detected.
+	<p>
+	
+	<p class="sub"><code>public Entity getEntity()</code></p>
+	<p>
+	Modifiers are expected to return an <code>Entity</code> 
+	when this method is invoked. In most cases this will be
+	modifier's parent entity. 
+	<p>
+	Note, however, that this is
+	not a requirement and a modifier can return any entity it 
+	wishes to. This can be used to achieve interesting and useful 
+	effects with more complex entities. 
+	<p>
+	
+	<p class="sub"><code>public double getX()</code></p>
+	<p class="sub"><code>public double getY()</code></p>
+	<p>
+	Return the coordinates of the point, represented by
+	this modifier.
+	<p>
+	
+	
+	<p class="sub"><code>public int getSnapPointType()</code></p>
+	<p>
+	Returns the type of the modifier. Can be one of the following:
+	<code>
+	<ul>
+		<li>NONE</li>
+		<li>ENDPOINT</li>
+		<li>MIDPOINT</li>
+		<li>CENTER</li>
+		<li>QUADRANT</li>
+	</ul>
+	</code>
+	<p>
+	Editors will display different snap markers for these 
+	modifier types.
+	<p>
+	
+	<p class="sub"><code>public int getSnapPointFunction()</code></p>
+	<p>
+	Returns the purpose of the modifier. Can be one of the 
+	following:
+	<code>
+	<ul>
+		<li>NONE</li>
+		<li>MOVE</li>
+		<li>STRETCH</li>
+	</ul>
+	</code>
+	<p>
+	Editors may display different snap markers for these 
+	different modifier functions, or provide specific handling
+	of the modifier.
+	<p>
+	
+	<a href="#contents"><b>�</b> <i>back to top</i></a>
+	<p>
+	
+	
+	<p class="title"><a name="rotatable">The <u>RotatableEntity</u> Interface</a></p>
+	<p>
+	This interface defines methods to modify the rotation
+	of an entity. It is provided for the use of entities
+	having only one insertion point (texts, blocks etc.) 
+	Other entities will be rotated by simply changing the
+	coordinates of their modifiers.
+	<p>
+	
+	<p class="sub"><code>public void setRotation(double angle)</code></p>
+	<p class="sub"><code>public double getRotation()</code></p>
+	<p>
+	Return or set the rotation angle of the <code>Entity</code>.
+	Note that the angle is specified in <i>degrees</i>, rather
+	than in	<i>radians</i>.
+	<p>
+	
+	<a href="#contents"><b>�</b> <i>back to top</i></a>
+	<p>
+	
+	
+	
+	<p class="title"><a name="explodable">The <u>ExplodableEntity</u> Interface</a></p>
+	<p>
+	This interface defines one method to return the
+	elements the implementing <code>Entity</code> can
+	be exploded to.
+	<p>
+	
+	<p class="sub"><code>public Iterator explode()</code></p>
+	<p>
+	Return a list of entities as a result of the exploding
+	of the implementing <code>Entity</code>.
+	<p>
+	Note that the resulting entities should be created each
+	time this method is called. Returning of the same 
+	<code>Entity</code> instances will inevitably cause 
+	problems.
+	<p>
+	It is also worth to mention that the event of calling 
+	this method does not necessarily mean that the implementing 
+	<code>Entity</code> is about to be, or is at all intended to 
+	be, deleted. The resulting entities are not added by this 
+	method to any <code>DrawingModel</code> and no action other than 
+	merely creating a list of entities is taken.
+	<p>
+	
+	<a href="#contents"><b>�</b> <i>back to top</i></a>
+	<p>
+	
+	
+	<p class="title">Document Info</p>
+		<p>
+		Creation Date: 27/03/2003<br>
+		Author: <a href="mailto:aantov@users.sourceforge.net">Assen Antov</a><br>
+		Revision: 2<br>
+		Revision Date: 04/10/2004<br>
+		Revised By: <a href="mailto:aantov@users.sourceforge.net">Assen Antov</a><p>
+
+</body>
+
+</html>

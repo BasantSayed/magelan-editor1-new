@@ -1,0 +1,8 @@
+#Class Manifest File
+#Wed Jul 23 13:23:55 EEST 2003
+Created-By=magelan.editor.ClassManifest
+HelpPath=./help/ext_changethickness.html
+Info=A combo list that changes the thickness of the selected entities or layer thickness if no entities are selected.
+ClassName=org.magelan.editor.extension.ChangeThickness
+Manifest-Version=1.0
+ClassPath=.

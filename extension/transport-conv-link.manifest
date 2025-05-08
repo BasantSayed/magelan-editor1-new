@@ -1,0 +1,6 @@
+HelpPath=./help/ext_conv_link.html
+Created-By=
+ClassName=org.magelan.transport.extension.ConvertToLink
+Info=
+Manifest-Version=1.0
+ClassPath=C\:\\C Drive\\eclipse\\workspace\\transport\\bin;d\:\\magelan\\transport\\bin

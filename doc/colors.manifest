@@ -1,0 +1,8 @@
+# Demo Class Manifest File
+# Wed Jul 23 13:20:48 EEST 2003
+ClassName=magelan.editor.extension.Colors
+ClassPath=.\\path\\to\\the\\compiled\\extension
+HelpPath=colors.html
+Info=Color chooser extension.
+Manifest-Version=1.0
+Created-By=magelan.editor.ClassManifest

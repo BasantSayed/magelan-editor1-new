@@ -1,0 +1,8 @@
+#Class Manifest File
+#Mon Jul 07 01:21:17 CEST 2003
+Created-By=magelan.editor.ClassManifest
+HelpPath=./help/ext_circle.html
+Info=Creates a circle entity.
+ClassName=org.magelan.editor.extension.NewCircle
+Manifest-Version=1.0
+ClassPath=.

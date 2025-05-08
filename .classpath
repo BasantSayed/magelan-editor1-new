@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="lib/epsgraphics.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/log4j-1.2.8.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/looks-1.2.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/magelan-commons.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/magelan-core.jar" sourcepath="D:/master/sw construction/magelan-0-src.zip"/>
+	<classpathentry exported="true" kind="lib" path="lib/magelan-db.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/magelan-transport.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/svgstyle.jar"/>
+	<classpathentry exported="true" kind="lib" path="magelan-editor.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

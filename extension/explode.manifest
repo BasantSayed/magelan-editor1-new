@@ -1,0 +1,6 @@
+Created-By=
+HelpPath=./help/ext_explode.html
+Info=Explodes the selected entities.
+ClassName=org.magelan.editor.extension.Explode
+Manifest-Version=1.0
+ClassPath=.

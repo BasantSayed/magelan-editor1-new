@@ -1,0 +1,6 @@
+Created-By=
+HelpPath=./help/ext_hatch.html
+Info=Associates hatch to the selected entities.
+ClassName=org.magelan.editor.extension.NewHatch
+Manifest-Version=1.0
+ClassPath=.

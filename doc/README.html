@@ -1,0 +1,234 @@
+<html>
+<head>
+  <title>Magelan Editor Framework 1.0 RC4</title>
+  <meta http-equiv="Content-Type" content="text/html">
+  <link href="classic.css" rel="stylesheet" type="text/css">
+</head>
+
+<body size=80%>
+	<p class="sub" align="left">
+	<img src="magelan_logo1b.gif" border=0>
+	</p>
+	
+	<p class="sub" align="left"><font face="Tahoma" size=+1>
+		Graphics Editor Framework
+		<font color=#000099>1.0 <font face="Arial"><i>RC4</i></font></font>
+	</font></p>
+	
+	<p></p>
+	
+	<p class="title"><font face="Arial" size=+1>
+		Getting Started
+	</font></p>
+	<p>
+	<ul>
+		<li><a href="http://magelan.sourceforge.net/">
+			The Magelan Project Homepage
+		</a></li>
+		<li><a href="https://sourceforge.net/projects/magelan/">
+			The Magelan Project at SourceForge.net
+		</a></li>
+		<li><a href="https://sourceforge.net/project/showfiles.php?group_id=73971">
+			Download the newest releases
+		</a></li>
+		<li><a href="https://sourceforge.net/tracker/?func=add&group_id=73971&atid=539550">
+			Send a bugfix
+		</a></li>
+		<li><a href="https://sourceforge.net/tracker/?func=add&group_id=73971&atid=539553">
+			Request a feature
+		</a></li>
+	</ul>
+	<p>
+	
+	<p class="title">General Information</p>
+	<p>The primary goals of the Magelan project are to establish a compact 
+	and flexible drawing editor API and a modular and powerful editor 
+	environment. A lot of efforts have been put into keeping the drawing 
+	model and extensions framework as simple and convenient to use as 
+	possible. Custom drawing entities and extensions for the editor 
+	application are easy to write and plug in the editor environment.
+	<p>
+	The project is divided into two parts - one is the <b>core library</b>
+	defining clear and powerful drawing and editor models, and the 
+	second is the <b>editor library</b>, which extends the core
+	and features a basic scalable editor implementation. 
+	This is a complete release and includes both libraries.
+	<p>
+
+	
+	<p class="title">Notable Features</p>
+	<p>
+	<ul>
+		<li>full control over all entity properties;</li>
+		<li>easy plugability of entities, editor extensions, templates etc.</li>
+		<li>reading and writing basic <i>AutoCAD DXF</i> files;</li>
+		<li>export to <i>SVG</i> and <i>EPS</i> formats;</li>
+		<li>multi-language support;</li>
+		<li> comprehensive help system.</li>
+	</ul>
+	<p>
+	
+	<p class="title">Requirements</p>
+	<p>
+	The project distribution package requires either the
+	<i>Java Runtime Environment</i> or the <i>Java SDK</i>. 
+	They can be downloaded at
+	<a href="http://java.sun.com/j2se/downloads.html">http://java.sun.com/j2se/downloads.html</a>.
+	Also note that the application needs 
+	<i>Java 1.5.0</i> or higher and will not run (correctly) under older 
+	versions. 
+	<p>
+	Magelan has been developed and tested mostly on Windows. 
+	<p>
+	
+	<p class="title">License<p>
+	The <b>core</b> and <b>editor</b> libraries are licensed 
+	under the terms of the 
+	<a href="LICENSE.txt">BSD License</a>. 
+	Use only subject to the terms of this license agreement.
+	<p>
+
+	<p class="title">Distribution Package</p>
+		<p>
+		There are three distribution packages: for Windows with JRE, for 
+		Windows without JRE and for all other systems.
+		<p>
+		The structure of the distribution packages is as follows: <br>
+		
+		<table>
+			<tr><td valign="top"><img src="path.gif" border=0></td><td>
+			<td valign="top"><b>/src</b></td>
+			<td valign="top">containing all <b>editor</b> 
+			source files;
+			</td></tr>
+			
+			<tr><td valign="top"><img src="path.gif" border=0></td><td>
+			<td valign="top"><b>/doc</b></td>
+			<td valign="top">containing the available documentation, 
+			including <i>JavaDoc</i>s;
+			</td></tr>
+			
+			<tr><td valign="top"><img src="path.gif" border=0></td><td>
+			<td valign="top"><b>/extension</b></td>
+			<td valign="top">containing extensions and extension manifests;
+			</td></tr>
+			
+			<tr><td valign="top"><img src="path.gif" border=0></td><td>
+			<td valign="top"><b>/lib</b></td>
+			<td valign="top">containing the compiled <b>core</b> 
+			and other libraries;
+			</td></tr>
+			
+			<tr><td valign="top"><img src="jar.gif" border=0></td><td>
+			<td valign="top"><b>magelan.jar</b></td>
+			<td valign="top">an executable <i>JAR</i> file, placed in the root folder
+			of the package and containing the compiled editor.
+			</td></tr>
+		</table>
+		<p>
+		<i>To run the editor, execute the <b>magelan.jar</b>
+		file.</i>
+		<p>
+	
+	<p class="title">Documentation</p><p>
+		<!--The following documentation is available:-->
+		<br>
+		
+		<p class="sub">core 1.0</p>
+		<table>
+			<tr><td><img src="new.gif" border=0></td><td>
+			<a href="core/Magelan Framework Core.html">Overview of the core library</a>
+			</td></tr>
+			
+			<tr><td><img src="new.gif" border=0></td><td>
+			<a href="core/Entities Guide.html">Guide to writing graphical entities</a><br>
+			</td></tr>
+			
+			<tr><td><img src="new.gif" border=0></td><td>
+			<a href="core/javadoc/index.html"><i>JavaDoc</i>s</a><br>
+			</td></tr>
+		</table>
+		<p>
+		
+		<p class="sub">editor 1.0</p>
+		<table>
+			<tr><td><img src="new.gif" border=0></td><td>
+			<a href="Extensions Guide.html">Guide to writing and deploying extensions</a><br>
+			</td></tr>
+			
+			<tr><td><img src="new.gif" border=0></td><td>
+			<a href="PathExtension.html">Help on using the Path extension</a><br>
+			</td></tr>
+			
+			<tr><td><img src="new.gif" border=0></td><td>
+			<a href="javadoc/index.html"><i>JavaDoc</i>s of the most important packages</a><br>
+			</td></tr>
+		</table>
+		<p>
+			
+	<p class="title">Contribute</p><p>
+		If you find our work useful, we would be grateful if you
+		help us promote it.
+		If you are interested in this project and would like 
+		taking part in it, please contact
+		<a href="mailto:aantov@users.sourceforge.net?subject=Magelan Recruitment">aantov@users.sourceforge.net</a>.
+		</p><p>
+		Enthusiastic developers are welcome.
+		</p>
+		<!--img src="magelan.gif" border=0-->
+		<p>
+	
+	<p class="title">Acknowledgements</p><p>
+		<table>
+
+		<tr><td valign="top"><img src="jar.gif" border=0></td><td>
+		Included is the superb <i>Plastic Look and Feel</i> library developed by 
+		<a href="mailto:info@JGoodies.com">Karsten Lentzsch</a>. 
+		For more information and other high quality products, please visit
+		<a href="http://www.jgoodies.com/">www.jgoodies.com</a>.
+		The included version of the library is distributed under the
+		<a href="bsd-license.txt">BSD License</a>.
+		</td></tr>
+		
+		<tr><td valign="top"><img src="jar.gif" border=0></td><td>
+		Magelan uses the <i>EPSGraphics2D</i> class to export files
+		to the <i>EPS</i> format. This and other good software
+		developed by 
+		<a href="mailto:paul@jibble.org">Paul Mutton</a>
+		can be found at
+		<a href="http://www.jibble.org">www.jibble.org</a>. 
+		</td></tr>
+		
+		<tr><td valign="top"><img src="jar.gif" border=0></td><td>
+		The excellent <i>Log4j</i> library by 
+		<a href="http://www.apache.org">Apache Software Foundation</a>
+		is used to log events during runtime. 
+		The library is distributed under the
+		<a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache Software License 2.0</a>.
+		'The names "Log4j" and "Apache Software Foundation" must not be used to endorse or promote 
+		products derived from this software without prior written permission. 
+		For written permission, please contact apache@apache.org.'
+		</td></tr>
+		
+		
+		</table>
+		<p>
+	
+	<p class="title">Hosted By</p>
+	<p>Project development is hosted by:<br>
+	<A href="http://sourceforge.net">
+	<IMG border=0 src="http://sourceforge.net/sflogo.php?group_id=73971&amp;type=5" width="210" 
+	height="62" border="0" alt="SourceForge.net"></A> 
+	<p>
+	
+	<p class="title">Document Info</p>
+		<p>
+		Creation Date: 14/05/2003<br>
+		Author: <a href="mailto:aantov@users.sourceforge.net">Assen Antov</a><br>
+		Revision: 5<br>
+		Revision Date: 14/02/2006<br>
+		Revised By: <a href="mailto:aantov@users.sourceforge.net">Assen Antov</a><p>
+
+</body>
+
+</html>

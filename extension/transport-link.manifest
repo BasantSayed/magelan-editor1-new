@@ -1,0 +1,8 @@
+#Class Manifest File
+#Sun Jan 22 17:17:38 EET 2006
+Created-By=
+HelpPath=./help/ext_link.html
+Info=
+ClassName=org.magelan.transport.extension.NewLink
+Manifest-Version=1.0
+ClassPath=C\:\\C Drive\\eclipse\\workspace\\transport\\bin;d\:\\magelan\\transport\\bin

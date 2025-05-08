@@ -1,0 +1,5 @@
+Manifest-Version=1.0
+HelpPath=./extension/db/doc/ext_db_newentds.html
+Info=
+ClassName=org.magelan.db.extension.NewEntityDataSource
+ClassPath=./extension/db/bin/magelan-db.jar;d:/magelan/magelan-db/build

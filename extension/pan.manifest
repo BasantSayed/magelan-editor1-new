@@ -1,0 +1,8 @@
+#Class Manifest File
+#Mon Jul 07 01:29:46 CEST 2003
+Created-By=magelan.editor.ClassManifest
+HelpPath=./help/ext_pan.html
+Info=Navigate throughout the drawing.
+ClassName=org.magelan.editor.extension.Pan
+Manifest-Version=1.0
+ClassPath=.

@@ -1,0 +1,8 @@
+#Class Manifest File
+#Mon Jul 07 08:08:41 CEST 2003
+Created-By=magelan.editor.ClassManifest
+HelpPath=./help/ext_text.html
+Info=Creates a text entity.
+ClassName=org.magelan.editor.extension.NewText
+Manifest-Version=1.0
+ClassPath=.

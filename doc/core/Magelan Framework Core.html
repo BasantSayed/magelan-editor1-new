@@ -1,0 +1,248 @@
+<html>
+<head>
+  <title>Magelan Editor Framework (core 1.0)</title>
+  <meta http-equiv="Content-Type" content="text/html">
+  <link href="classic.css" rel="stylesheet" type="text/css">
+</head>
+
+<body size=80%>
+	<p class="title"><font face="Tahoma" size=+1>
+		Magelan Graphics Editor Framework (core 1.0)
+	</font></p>
+	<p class="sub"><font face="Arial" size=+1>
+		Structure and Functionality
+	</font></p>
+	<p>
+	
+	
+	<p class="title">Overview<p>
+	Some of the more important packages are listed below:
+	<ul>
+	<li><b><a href="javadoc/org/magelan/drawing/package-summary.html">org.magelan.drawing</a></b>
+	<p>
+	Defines basic 
+	<a href="javadoc/org/magelan/drawing/DrawingModel.html">DrawingModel</a>,
+	<a href="javadoc/org/magelan/drawing/DrawingElement.html">DrawingElement</a>,
+	<a href="javadoc/org/magelan/drawing/DrawingRenderer.html">DrawingRenderer</a> and 
+	<a href="javadoc/org/magelan/drawing/DrawingViewer.html">DrawingViewer</a>.
+	These can be used for simple visualization tasks. The package is fairly simple and is not 
+	described here in detail. The core itself extends this package. 
+	</li>
+	</ul>
+	<ul>
+	<li><b><a href="javadoc/org/magelan/core/package-summary.html">org.magelan.core</a></b>
+	<p>
+	Defines more complex drawing model and entities; adds support for layers, line styles,
+	text styles, blocks and others.</li>
+	</ul>
+	<ul>
+	<li><b><a href="javadoc/org/magelan/core/entity/package-summary.html">org.magelan.core.entity</a></b>
+	<p>Contains a set of graphical entities - point, line, circle, 
+	polygon, hatch, text, label etc. For detailed information on
+	how to design a graphical entity please refer to the
+	<a href="Entities Guide.html">Guide to writing entities</a>.
+	</li>
+	</ul>
+	<ul>
+	<li><b><a href="javadoc/org/magelan/core/editor/package-summary.html">org.magelan.core.editor</a></b>
+	<p>Contains a drag and drop editor implementation and related classes. 
+	</li>
+	</ul>
+	<p>
+	
+	
+	<p class="title">Drawing Model</p>
+
+		<p class="sub">
+		<a href="javadoc/org/magelan/core/CoreModel.html">CoreModel</a> interface and 
+		<a href="javadoc/org/magelan/core/DefaultCoreModel.html">DefaultCoreModel</a> class</p>
+			<p>The <code>CoreModel</code> interface extends the basic 
+			<code>org.magelan.drawing.DrawingModel</code>. Its default implementation 
+			defines methods for adding and removing entities,
+			adding and removing of layers, setting of drawing's
+			current layer, linestyle, line thickness and color. 
+			<p>
+			
+		<p class="sub">
+		<a href="javadoc/org/magelan/core/Entity.html">Entity</a> interface and 
+		<a href="javadoc/org/magelan/core/DefaultEntity.html">DefaultEntity</a> class</p>
+			<p>The <code>Entity</code> interface represents a graphical 
+			entity (element). It extends the basic <code>org.magelan.drawing.DrawingElement</code> 
+			to add support not only for shape and rendering method, but also for layer, color, 
+			linestyle, textstyle etc. It is designed to provide both rendering and 
+			editing functionality. Note that the rendering functionallity may be overriden
+			by custom <code>DrawingRenderer</code>s.
+			<p>
+			The <code>Entity</code> interface can be also used to extend 
+			existing drawing models and make them usable within
+			a <code>DrawingEditor</code> or <code>DrawingViewer</code>. 
+			<p>
+			Rotation, explodability and other characteristics, which
+			are not common for all entities, are specified in 
+			separate interfaces.
+			<p>
+			One of the most important features of the interface is 
+			that it defines its own drag and drop behaviour. The
+			<code>EntityModifier</code> interface is used for that
+			purpose (see below).
+			<p>
+		
+		<p class="sub">
+		<a href="javadoc/org/magelan/core/EntityModifier.html">EntityModifier</a> interface</p>
+			<p>This interface is used to drag & drop modify entities.
+			Each <code>Entity</code> provides the editor with its 
+			<code>EntityModifier</code>s, when asked.  
+			The <code>EntityModifier</code>s are expected to modify 
+			their parent entities according to coordinates 
+			supplied to them. The resulting	modification of the 
+			entity is specific for each modifier: the entity can 
+			be resized, moved, etc.
+			<p>
+			The entity should provide modifiers for all of its 
+			specific points. For example a line will produce 3 
+			modifiers:
+			</p>
+			<ul>
+				<li>at the start of the line, which if used will 
+				result in moving the line start to the new 
+				coordinates;</li>
+				<li>at the end of the line, which if used will 
+				result in moving the line end to the new 
+				coordinates;</li>
+				<li>at the middle of the line, which if used will 
+				result in moving the whole line to the new 
+				coordinates.</li>
+			</ul>
+			<p>
+			A circle would use its modifiers to change its 
+			size and position.
+			<p>
+			
+		<p class="sub">
+		<a href="javadoc/org/magelan/core/ExplodableEntity.html">ExplodableEntity</a> and 
+		<a href="javadoc/org/magelan/core/RotatableEntity.html">RotatableEntity</a> interfaces</p>
+			<p>Should an entity wish to be rotatable or explodable,
+			it must implement these interfaces. <p>
+			Most entities 
+			will not need to implement for example the 
+			<code>RotatableEntity</code> interface, since they can be 
+			rotated by simply changing their coordinates, but some 
+			(text entities, blocks etc.) defining only one location 
+			point will need their rotation characteristics 
+			explicitly specified. <p>
+			Many of the basic entities do not have the need to be 
+			explodable but some composite entities will implement
+			the <code>Explodable</code> interface to return a list 
+			of their elements when requested.
+			<p>
+			
+	<p class="title">Editor Component</p><p>
+		An editor for drawing models is defined in the
+		<a href="javadoc/org/magelan/core/editor/DrawingEditor.html">DrawingEditor</a> 
+		interface. Its default implementation - the 
+		<a href="javadoc/org/magelan/core/editor/DefaultDrawingEditor.html">DefaultDrawingEditor</a>,
+		provides a <i>Swing</i> component ready for use in any 
+		application. <p>
+		The editor is drag and drop enabled and allows the 
+		displayed entities to be selected and modified using 
+		the behavior provided by their <code>EntityModifier</code>s.
+		<p>
+	
+	
+	<p class="title">Comparison<p>
+	A rough comparison between the features of <code>org.magelan.drawing</code>, <code>org.magelan.core</code>
+	and the similar <a href="http://jdrawing.sourceforge.net/">JDrawing</a> is given below. 
+	The design of the <code>org.magelan.drawing</code> package is inspired by and is functionally 
+	equivalent to <i>JDrawing</i>. The names of many interfaces, classes and methods are intentionally 
+	the same or very similar to their <i>JDrawing</i> equivalents. Note that the comparison is not a result of comprehensive testing. 
+	<p>
+	
+	<style type="text/css">
+		td {border-width: 0; border-style: solid; border-color: #FFFFFF"}
+	</style>
+	
+	<table border=1 cellspacing=0 style="border-style: solid; border-color: #c0c0c0 #FFFFFF #c0c0c0 #FFFFFF">
+		<tr>
+			<td><b>Feature</b></td>
+			<td align=center><b>-JDrawing-</b></td>
+			<td align=center><b>-org.magelan.drawing-</b></td>
+			<td align=center><b>-org.magelan.core-</b></td>
+		</tr>
+		<tr>
+			<td>Distinct data model</td>
+			<td align=center><img src="good.gif"></td>
+			<td align=center><img src="good.gif"></td>
+			<td align=center><img src="good.gif"></td>
+		</tr>
+		<tr>
+			<td>Self-renderable elements</td>
+			<td align=center><img src="good.gif"></td>
+			<td align=center><img src="good.gif"></td>
+			<td align=center><img src="good.gif"></td>
+		</tr>
+		<tr>
+			<td>Pluggable element renderers</td>
+			<td align=center><img src="good.gif"></td>
+			<td align=center><img src="good.gif"></td>
+			<td align=center><img src="good.gif"></td>
+		</tr>
+		<tr>
+			<td>Element styling</td>
+			<td align=center><img src="fair.gif"></td>
+			<td align=center><img src="fair.gif"></td>
+			<td align=center><img src="good.gif"></td>
+		</tr>
+		<tr>
+			<td>Pluggable element caches (optimize rendering)</td>
+			<td align=center><img src="good.gif"></td>
+			<td align=center> </td>
+			<td align=center> </td>
+		</tr>
+		<tr>
+			<td>Rendering speed</td>
+			<td align=center><img src="good.gif"></td>
+			<td align=center><img src="fair.gif"></td>
+			<td align=center><img src="fair.gif"></td>
+		</tr>
+		<tr>
+			<td>Selection of elements</td>
+			<td align=center></td>
+			<td align=center><img src="good.gif"></td>
+			<td align=center><img src="good.gif"></td>
+		</tr>
+		<tr>
+			<td>Editing of elements (DnD)</td>
+			<td align=center> </td>
+			<td align=center> </td>
+			<td align=center><img src="good.gif"></td>
+		</tr>
+		<tr>
+			<td>Support of persistent serialization</td>
+			<td align=center> </td>
+			<td align=center> </td>
+			<td align=center><img src="good.gif"></td>
+		</tr>
+	</table>
+	<p>
+	
+	As shown above all three packages cleanly separate drawing model, elements / entities 
+	and renderers. A difference is that <i>JDrawing</i> defines pluggable drawing caches,
+	which are meant to optimize the selection of elements to be painted. As for the other two packages this 
+	functionallity is embedded in the drawing model. <i>JDrawing</i> is more responsive, when
+	a huge number of elements is displayed. The advantage of the core is that it readily supports 
+	drag and drop editing; CAD-style layers, line and text styles, as well as persistent 
+	serialization.
+	<p>
+	
+	
+	<p class="title">Document Info</p>
+		<p>
+		Creation Date: 19/02/2003<br>
+		Author: <a href="mailto:aantov@users.sourceforge.net">Assen Antov</a><br>
+		Revision: 3<br>
+		Revision Date: 21/01/2006<br>
+		Revised By: <a href="mailto:aantov@users.sourceforge.net">Assen Antov</a><p>
+
+</body>
+
+</html>

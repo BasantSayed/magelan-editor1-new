@@ -1,0 +1,21 @@
+[Thu May 08 13:40:34 EEST 2025]
+magelan.version=1.0 RC4
+magelan.manager=org.magelan.editor.SingleFrameEditorManager
+magelan.class.path=.\build;.\lib\looks-1.2.2.jar;.\lib\epsgraphics.jar;.\lib\log4j-1.2.8.jar;.\lib\magelan-commons.jar;.\lib\magelan-core.jar;D:\magelan\transport\bin;D:\magelan\magelan-statistics\bin;D:\magelan\transport\lib\jackcess-1.1.8.jar;
+java.vm.name=OpenJDK 64-Bit Server VM
+java.vm.version=23+37
+java.class.path=D:\master\sw construction\magelan-editor1 - Copy (2)\bin;D:\master\sw construction\magelan-editor1 - Copy (2)\lib\epsgraphics.jar;D:\master\sw construction\magelan-editor1 - Copy (2)\lib\log4j-1.2.8.jar;D:\master\sw construction\magelan-editor1 - Copy (2)\lib\looks-1.2.2.jar;D:\master\sw construction\magelan-editor1 - Copy (2)\lib\magelan-commons.jar;D:\master\sw construction\magelan-editor1 - Copy (2)\lib\magelan-db.jar;D:\master\sw construction\magelan-editor1 - Copy (2)\lib\magelan-transport.jar;D:\master\sw construction\magelan-editor1 - Copy (2)\lib\svgstyle.jar;D:\master\sw construction\magelan-editor1 - Copy (2)\lib\magelan-core.jar
+sun.cpu.isalist=amd64
+sun.cpu.endian=little
+file.encoding=UTF-8
+file.separator=\
+user.dir=D:\master\sw construction\magelan-editor1 - Copy (2)
+user.language=en
+user.country=US
+user.timezone=Africa/Cairo
+user.home=C:\Users\RTX
+os.arch=amd64
+os.name=Windows 11
+os.version=10.0
+path.separator=;
+

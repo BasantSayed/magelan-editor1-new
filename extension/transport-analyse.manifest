@@ -1,0 +1,8 @@
+#Class Manifest File
+#Sat Sep 09 14:50:41 EEST 2006
+Created-By=
+HelpPath=./help/ext_analyse.html
+Info=
+ClassName=org.magelan.transport.extension.Analyse
+Manifest-Version=1.0
+ClassPath=C\:\\C Drive\\eclipse\\workspace\\transport\\bin;d\:\\magelan\\transport\\bin;D\:\\magelan\\magelan-statistics\\bin

@@ -1,0 +1,6 @@
+Created-By=
+HelpPath=./help/ext_drawing_explorer.html
+Info=
+ClassName=org.magelan.editor.extension.explorer.DrawingExplorer
+Manifest-Version=1.0
+ClassPath=.

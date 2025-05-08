@@ -1,0 +1,6 @@
+Created-By=
+HelpPath=./help/ext_desire.html
+Info=
+ClassName=org.magelan.transport.extension.NewDesireLine
+Manifest-Version=1.0
+ClassPath=C\:\\C Drive\\eclipse\\workspace\\transport\\bin;d\:\\magelan\\transport\\bin

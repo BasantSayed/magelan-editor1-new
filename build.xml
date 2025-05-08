@@ -1,0 +1,169 @@
+
+<project name="magelan-editor" default="dist" basedir=".">
+	<tstamp></tstamp>
+
+	<!-- Global project settings -->
+	<property name="project.name" value="magelan-editor" />
+	<property name="project.author" value="Assen Antov (aantov@users.sourceforge.net)" />
+	<property name="project.compile.include" value="**"/>
+	<property name="project.jar.mainclass" value="org.magelan.editor.Editor"/>
+	<property name="project.jar.classpath" value="lib/magelan-commons.jar lib/magelan-core.jar lib/log4j-1.2.8.jar lib/looks-1.2.2.jar lib/epsgraphics.jar lib/svgstyle.jar"/>
+	<property name="project.doc.packages" value="org.magelan.editor,org.magelan.editor.event"/>
+	
+	<property name="build.id" value="1.0 RC4 ${DSTAMP}" />
+	<property name="build.compiler" value="modern" />
+
+	<!-- Source directories -->
+	<property name="src.dir" value="${basedir}/src" />
+	<property name="doc.dir" value="${basedir}/doc" />
+	<property name="lib.dir" value="${basedir}/lib" />
+
+	<!-- Main build directory -->
+	<property name="dist.dir" value="${basedir}/dist-${project.name}-${build.id}" />
+
+	<!-- Build sub-tree -->
+	<property name="dist.bin.dir" value="${dist.dir}/bin" />
+	<property name="dist.src.dir" value="${dist.dir}/src" />
+	<property name="dist.lib.dir" value="${dist.dir}/lib" />
+	<property name="dist.doc.dir" value="${dist.dir}/doc" />
+	<property name="dist.javadoc.dir" value="${dist.doc.dir}/javadoc" />
+
+	<!-- Names of the JAR and ZIP files -->
+	<property name="dist.jar.file" value="${project.name}.jar" />
+	<property name="dist.zip.file" value="${project.name}-${build.id}.zip" />
+	
+	<!-- Path to be used for compilation -->
+	<path id="base.path">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+
+	<!-- Display project settings -->
+	<target name="init" description="Init properties">
+		<echo message="${project.name}, build ${build.id}" />
+		<echo message="build.compiler = ${build.compiler}" />
+		<echo message="java.class.path = ${java.class.path}" />
+		<echo message="src.dir = ${src.dir}" />
+		<echo message="dist.dir = ${dist.dir}" />
+		<echo message="" />
+	</target>
+
+
+	<!-- Initialize directories -->
+	<target name="clean" description="Clean/create directories" depends="init">
+
+		<!-- Delete distribution foolder -->
+		<delete dir="${dist.dir}" />
+
+		<!-- Create distribution folders -->
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${dist.bin.dir}" />
+		<mkdir dir="${dist.src.dir}" />
+		<mkdir dir="${dist.doc.dir}" />
+		<mkdir dir="${dist.javadoc.dir}" />
+		<mkdir dir="${dist.lib.dir}" />
+	</target>
+
+
+	<!-- Compile the project -->
+	<target name="compile" description="Compile sources" depends="init">
+
+		<!-- Compile the sources -->
+		<javac srcdir="${src.dir}" 
+			debug="on" deprecation="on" optimize="on" source="5" 
+			includes="${project.compile.include}" destdir="${dist.bin.dir}">
+			<classpath refid="base.path" />
+		</javac>
+	
+	</target>
+	
+
+	<!-- Create JavaDocs-->
+	<target name="javadoc" description="Create JavaDocs" depends="init">
+
+		<!-- Compile the sources -->
+		<javadoc destdir="${dist.javadoc.dir}"
+			access="public" use="true" notree="false" nonavbar="false"
+			noindex="false" splitindex="true" author="true"
+			version="true" nodeprecatedlist="false" nodeprecated="false"
+			packagenames="${project.doc.packages}"
+			sourcepath="${src.dir}"
+			classpath="${dist.bin.dir}/${dist.jar.file}"
+			stylesheetfile="${doc.dir}/classic.css" 
+			doctitle="${project.name}, ${build.id}"
+			windowtitle="${project.name}, ${build.id}"/>
+	</target>
+	
+	
+	<!-- Create JAR file -->
+	<target name="jar" description="JAR the project" depends="init">
+
+		<!-- Copy resources to /bin directory -->
+		<copy todir="${dist.bin.dir}">
+			<fileset dir="${src.dir}" excludes="**/*.java" />
+		</copy>
+
+		<!-- Copy sources to /src directory -->
+		<copy todir="${dist.src.dir}">
+			<fileset dir="${src.dir}" includes="**/*.*" />
+		</copy>
+
+		<!-- Copy documentation to /doc directory -->
+		<copy todir="${dist.doc.dir}">
+			<fileset dir="${doc.dir}" includes="**/*" />
+		</copy>
+
+		<!-- Copy libraries to /lib directory -->
+		<copy todir="${dist.lib.dir}">
+			<fileset dir="${lib.dir}" includes="*.jar" />
+		</copy>
+
+		
+		<!--Make the JAR -->
+		<jar jarfile="${dist.dir}/${dist.jar.file}" basedir="${dist.bin.dir}">
+			<manifest>
+				<attribute name="Build" value="${build.id}"/>
+				<attribute name="Main-Class" value="${project.jar.mainclass}"/>
+				<attribute name="Class-Path" value="${project.jar.classpath}"/>
+				<attribute name="Built-By" value="${project.author}"/>
+				<attribute name="Date" value="${TODAY}"/>
+			</manifest>	
+		</jar>
+
+		<!-- Delete all compiled files and move the jar file in /bin -->
+		<delete dir="${dist.bin.dir}" />
+		<!--mkdir dir="${dist.bin.dir}" />
+		<move todir="${dist.bin.dir}" file="${dist.dir}/${dist.jar.file}" /-->
+
+	</target>
+
+
+	<target name="dist" description="Create distribution package" depends="clean,compile,jar">
+
+		<copy todir="${dist.dir}">
+			<fileset dir="${basedir}" includes="*.properties" />
+			<fileset dir="${basedir}" includes="*.xml" />
+			<fileset dir="${basedir}" includes="*.html" />
+			<fileset dir="${basedir}" includes="*.txt" />
+			<fileset dir="${basedir}" includes="*.nsi" />
+			<fileset dir="${basedir}" includes="*.bmp" />
+			<fileset dir="${basedir}" includes="*.ico" />
+		</copy>
+
+		<!-- magelan-editor specific -->
+		<copy todir="${dist.dir}/extension">
+			<fileset dir="${basedir}/extension" excludes="CVS" />
+		</copy>
+		<copy todir="${dist.dir}/help">
+			<fileset dir="${basedir}/help" excludes="CVS" />
+		</copy>
+		
+		<!--Make the ZIP file-->
+		<zip zipfile="${dist.dir}/${dist.zip.file}" basedir="${dist.dir}">
+		</zip>
+
+	</target>
+</project>
+

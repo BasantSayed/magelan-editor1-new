@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<!-- log4j.xml,v 1.2 2003/08/16 11:44:32 larisa Exp -->
+
+<!--
+   | For more configuration infromation and examples see the Jakarta Log4j
+   | owebsite: http://jakarta.apache.org/log4j
+ -->
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+
+  <!-- ============================== -->
+  <!-- Append messages to the console -->
+  <!-- ============================== -->
+
+  <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+    <param name="Threshold" value="DEBUG"/>
+    <param name="Target" value="System.out"/>
+
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d{mm:ss.SSS} %-5p [%c{1}] %m%n"/>
+    </layout>
+  </appender>
+
+
+  <!-- ========================= -->
+  <!-- Append messages to a File -->
+  <!-- ========================= -->
+
+  <appender name="FILE" class="org.apache.log4j.RollingFileAppender">
+    <param name="Threshold" value="DEBUG"/>
+    <param name="File" value="magelan.log"/>
+    <param name="MaxFileSize" value="50KB"/>
+    <param name="MaxBackupIndex" value="1"/>
+
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d{mm:ss.SSS} %-5p [%c{1}] %m%n"/>
+    </layout>
+  </appender>
+  
+
+  <!-- ========================= -->
+  <!-- Append ERRORS to a File   -->
+  <!-- ========================= -->
+
+  <appender name="ERRORS" class="org.apache.log4j.RollingFileAppender">
+    <param name="Threshold" value="ERROR"/>
+    <param name="File" value="error.log"/>
+    <param name="MaxFileSize" value="20KB"/>
+    <param name="Append" value="false"/>
+    <param name="MaxBackupIndex" value="1"/>
+    
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d{mm:ss.SSS} %-5p [%l] %m%n"/>
+    </layout>
+  </appender>
+
+
+  <!-- ======================= -->
+  <!-- Setup the Root category -->
+  <!-- ======================= -->
+  
+  <!-- CONSOLE	should be used by developers to test the application -->
+  <!-- FILE	with Treshold set to INFO should be used with the distribution package -->
+  <!-- ERRORS	should be used with the distribution package to log errors only -->
+
+  <root>
+    <appender-ref ref="CONSOLE"/>
+    <appender-ref ref="FILE"/>
+    <!--appender-ref ref="ERRORS"/-->
+  </root>
+  
+</log4j:configuration>

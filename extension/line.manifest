@@ -1,0 +1,8 @@
+#Class Manifest File
+#Mon Jul 07 01:15:37 CEST 2003
+HelpPath=./help/ext_line.html
+Created-By=
+ClassName=org.magelan.editor.extension.NewLine
+Info=Creates a line entity.
+Manifest-Version=1.0
+ClassPath=.

@@ -1,0 +1,6 @@
+Created-By=
+HelpPath=./help/ext_view.html
+Info=
+ClassName=org.magelan.editor.extension.NewView
+Manifest-Version=1.0
+ClassPath=.

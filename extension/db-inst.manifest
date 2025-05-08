@@ -1,0 +1,5 @@
+Manifest-Version=1.0
+HelpPath=./extension/db/doc/ext_db_install.html
+Info=Installs DB access classes
+ClassName=org.magelan.db.editor.Install
+ClassPath=./extension/db/bin/magelan-db.jar;d:/magelan/magelan-db/build

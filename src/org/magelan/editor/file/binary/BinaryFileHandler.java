@@ -1,0 +1,134 @@
+/*
+ * The Magelan Project - Vector Graphics Library and Editor
+ * Copyright (c) 2003-2004, Assen Antov and Larisa Feldman. All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met:
+ * 
+ * o Redistributions of source code must retain the above copyright notice, 
+ *   this list of conditions and the following disclaimer. 
+ * 
+ * o Redistributions in binary form must reproduce the above copyright notice, 
+ *   this list of conditions and the following disclaimer in the documentation 
+ *   and/or other materials provided with the distribution. 
+ * 
+ * o Neither the name Magelan nor the names of project members and
+ *   contributors may be used to endorse or promote products derived 
+ *   from this software without specific prior written permission. 
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+ * AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR 
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR 
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, 
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ * Suggestions, comments and fixes should be sent to:
+ * aantov@users.sourceforge.net
+ * larisa@users.sourceforge.net
+ */
+package org.magelan.editor.file.binary;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+
+import javax.swing.ImageIcon;
+import javax.swing.filechooser.FileFilter;
+
+import org.magelan.commons.Lang;
+import org.magelan.commons.ui.Icons;
+import org.magelan.core.CoreModel;
+import org.magelan.core.editor.DefaultDrawingEditor;
+import org.magelan.core.editor.DrawingEditor;
+import org.magelan.drawing.DrawingModel;
+import org.magelan.drawing.DrawingRenderer;
+import org.magelan.editor.DrawingFileHandler;
+import org.magelan.editor.Editor;
+import org.magelan.editor.file.FileException;
+
+
+/**
+ * 
+ * @author Assen Antov
+ * @version 1.0, 04/2003
+ */
+public class BinaryFileHandler extends DrawingFileHandler {
+		
+	private static Lang lang = Lang.getLang(Editor.STRINGS);
+	
+	public String getName() {
+		return lang.getString("BinaryFileHandler.name"); //$NON-NLS-1$
+	}
+
+	public String getTypeDescription() {
+		return lang.getString("BinaryFileHandler.descr"); //$NON-NLS-1$
+	}
+
+	public ImageIcon getIcon() {
+		return (ImageIcon) Icons.DRAWING_ICON;
+	}
+
+	public FileFilter getFileFilter() {
+		return new DefaultFileFilter("mdr", lang.getString("BinaryFileHandler.filter")); //$NON-NLS-1$ //$NON-NLS-2$
+	}
+
+	public boolean isSupported(File f) {
+		String ext = ""; //$NON-NLS-1$
+
+		if (f != null) {
+			String filename = f.getName();
+			int i = filename.lastIndexOf('.');
+
+			if (i > 0 && i < filename.length() - 1) {
+				ext = filename.substring(i + 1).toLowerCase();
+			}
+		}
+
+		if ("mdr".equals(ext)) { //$NON-NLS-1$
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public DrawingEditor decode(InputStream in, File file) throws FileException {
+		CoreModel dwg = null;
+		try {
+			ObjectInputStream decoder = new ObjectInputStream(new BufferedInputStream(in, 1048576));
+			dwg = (CoreModel) decoder.readObject();
+			decoder.close();
+		} catch (Throwable e) { 
+			throw new FileException("error decoding file", e); //$NON-NLS-1$
+			//return null;
+		}
+		
+		DrawingEditor editor = new DefaultDrawingEditor();
+		editor.setModel(dwg);
+		return editor;
+	}
+
+	public boolean isSupported(DrawingModel dwg) {
+		return true;
+	}
+
+	public void encode(DrawingModel dwg, DrawingRenderer renderer, OutputStream out) throws FileException {
+		try {
+			ObjectOutputStream encoder = new ObjectOutputStream(new BufferedOutputStream(out, 1048576));
+			encoder.writeObject(dwg);
+			encoder.flush();
+			encoder.close();
+		} catch (Throwable e) {
+			throw new FileException("error encoding file", e); //$NON-NLS-1$
+		}
+	}
+}

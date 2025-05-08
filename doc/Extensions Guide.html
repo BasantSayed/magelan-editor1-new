@@ -1,0 +1,246 @@
+<html>
+<head>
+  <title>Magelan Editor Framework (editor 1.0)</title>
+  <meta http-equiv="Content-Type" content="text/html">
+  <link href="classic.css" rel="stylesheet" type="text/css">
+</head>
+
+<body size=80%>
+	<p class="title"><font face="Tahoma" size=+1>
+		Magelan Graphics Editor Framework (editor 1.0)
+	</font></p>
+	<p class="sub"><font face="Arial" size=+1>
+		Writing and Deploying Extensions
+	</font></p>
+	<p>
+	
+	<p class="title"><a name="contents">Contents</a></p>
+	<br>
+	<ul>
+		<li><a href="#overview">Overview</a></li>
+		<li><a href="#structure">Structure</a></li>
+		<li><a href="#mf">Manifests</a></li>
+		<li><a href="#deploy">Deployment</a></li>
+		<li><a href="#examples">Examples</a></li>
+	</ul>
+	<p>
+	
+	<p class="title"><a name="overview">Overview</a></p>
+	<p>
+	
+	Extensions (along with entities) are a pivotal element of the Magelan framework. 
+	The establishment of a simple and compact model for extensions has always been
+	a top priority during the development of this project. All toolbar commands, 
+	(except for the ones in the <b>File</b> toolbar) and even the <b>Properties</b> 
+	editor table, layer and linestyle controls are extensions. Everyone can easily
+	create new extensions to improve the functionality of the editor and solve 
+	specific problems of their own.
+	<p>
+	
+	<a href="#contents"><b>»</b> <i>back to top</i></a>
+	<p>
+
+	
+	<p class="title"><a name="structure">Structure</a></p>
+	<p>
+	
+	All extensions extend the <code>AbstractEditorExtension</code> class, which in turn
+	is a subclass of Swing's <code>AbstractAction</code> class. Extensions are loaded
+	by the editor and typically placed in the extensions toolbar and menu as buttons.
+	The buttons and menu items will be automatically constructed and maintained by 
+	the GUI. Note that in order to be successfully instantiated by the editor 
+	extensions must have a public default constructor. Extensions also have to use the 
+	following methods:
+	<p>
+	
+	<p class="sub"><code>public Object getValue(String key)</code></p>
+	<p class="sub"><code>public void setValue(String key, Object value)</code></p>
+	<p>
+	This pair of methods is defined by the <code>AbstractAction</code> class to
+	allow manipulating of the properties used to visualize an <code>Action</code>.
+	The extension manager will recognize and use the properties listed below: <p>
+	
+	<table border=0>
+	<tr><td valign=top><code>Action.NAME</code></td>
+	<td valign=top>The name that will be used to identify the extension. (Note: the string 
+	should not be internationalized!)</td></tr>
+	
+	<tr><td valign=top><code>Action.SMALL_ICON</code></td>
+	<td valign=top>An <code>ImageIcon</code> to represent the extension in toolbars and menus.</td></tr>
+	
+	<tr><td valign=top><code>AbstractEditorExtension.GROUP</code></td>
+	<td valign=top>The group the extension belongs to. Extensions are placed in different menus and toolbars
+	in accordance with the value of this property.</td></tr>
+	
+	<tr><td valign=top><code>Action.SHORT_DESCRIPTION</code></td>
+	<td valign=top>Short extension description to be shown as a tooltip.</td></tr>
+	
+	<tr><td valign=top><code>Action.LONG_DESCRIPTION</code></td>
+	<td valign=top>Long extension description to be shown in the status bar.</td></tr>
+	
+	<tr><td valign=top><code>Action.ACCELERATOR_KEY</code> and <code>Action.MNEMONIC_KEY</code></td>
+	<td valign=top>The keys to be used for extension invocation.</td></tr>
+	
+	<tr><td valign=top><code>AbstractEditorExtension.VERSION</code></td>
+	<td valign=top>Version information.</td></tr>
+	
+	<tr><td valign=top><code>AbstractEditorExtension.AUTHOR</code></td>
+	<td valign=top>Information about the provider of the extension.</td></tr>
+	</table>
+	<p>
+	
+	
+	<p class="sub"><code>public void run(DrawingEditor e)</code></p>
+	<p>
+	The editor GUI will call this method when the extension has to be invoked. 
+	The parameter <code>DrawingEditor</code> will point to the currently selected editor
+	or <code>null</code>, if no such editor.
+	<p>
+	
+	
+	<p class="sub"><code>public Component getComponent()</code></p>
+	<p>
+	Some methods may need to provide more complex functionallity that cannot 
+	be represented with a button. In such cases the extensions must override this
+	method to return their desired custom component. Depending on its type it
+	will be placed in the toolbars or in the tab panel on the left (if is an instance 
+	of <code>JScrollPane</code>).
+	<p>
+	
+	<a href="#contents"><b>»</b> <i>back to top</i></a>
+	<p>
+
+
+	<p class="title"><a name="mf">Manifests</a></p>
+	<p>
+	Manifests are plain text files (.mf or .manifest) containing information
+	about extension's class name, paths to the required libraries or classes (if any),
+	path to its help file and some human-readable tips about extension's functionallity.
+	<p>
+	The editor will read such manifest files and construct the extensions described by
+	them. An example manifest file follows:<p>
+	
+	<table border=0 width=100%
+	<tr><td valign=top><code>
+	# Demo Class Manifest File<br>
+	# Mon Jul 07 01:15:37 CEST 2003<br>
+	<br>
+	# extension's full class name<br>
+	ClassName=myprojects.magelan.extension.MyExtension<br>
+	<br>
+	# libraries needed to load the extension class<br>
+	ClassPath=.\\extension\\MyExtensionSuite.jar<br>
+	<br>
+	# some hints on extension's purpose<br>
+	Info=A very powerful and secret extension.<br>
+	<br>
+	# path to extension's help file<br>
+	HelpPath=.\\extension\\line.html<br>
+	<br>
+	# may be omitted<br>
+	Created-By=<br>
+	Manifest-Version=1.0<br>
+	</code></td></tr>
+	</table>
+	<p>
+	
+	Note that the paths are given relative to editor's working directory, which is 
+	the root directory of the extracted distribution package. 
+	Also note that the usage of \ or / path separators is platform specific. 
+	<p>
+	
+	<a href="#contents"><b>»</b> <i>back to top</i></a>
+	<p>
+	
+		
+	<p class="title"><a name="deploy">Deployment</a></p>
+	<p>
+	After an extension has been created, compiled and located in a certain directory,
+	a manifest file describing it must be created. The default (and preferred) place for extensions and 
+	their manifest files is currently the <b>/extension</b> folder. Extensions and 
+	manifests are handled by the <b>Extensions | Manage</b> dialog from editor's main 
+	menu bar. 
+	<p>
+	<img src="extmanager2.gif">
+	<p>
+	There are two ways to tell the editor about a manifest file from the extensions 
+	manager dialog:
+	<p>
+	
+	<p class="sub">Declaring a Single Manifest</p>
+	<p>
+	Select the <b>Manifests</b> tab and add the manifest file name to the list
+	of known manifests. If the file cannot be located an error icon will appear next
+	to its name. The order of the manifest files (which is also the order they will
+	be loaded and placed in the toolbars the next time the editor is started) can be 
+	changed by dragging them with the right mouse button. To edit a manifest, choose 
+	the <b>Edit</b> button
+	<p>
+	<img src="manifests.gif">
+	<p>
+		
+	<p class="sub">Declaring Multiple Manifests</p>
+	<p>
+	Select the <b>Paths</b> tab and add the directory the manifest file is
+	located in. Again if the directory cannot be found an error icon will appear next
+	to it. 
+	<p>
+	<img src="mfpaths.gif">
+	<p>
+	To add all manifests located in the listed directories to the list of
+	known manifests, choose the <b>Scan</b> button. This option is useful for 
+	deployment of multiple extensions.
+	<p>
+	
+	<p class="sub">Automatic Loading of Extensions</p>
+	<p>
+	If the <b>extensions.autoload</b> option from the <b>Preferences | Edit Workspace</b>
+	dialog is selected the editor will ignore the manifests listed in the <b>Manifests</b>
+	tab of the extension manager dialog. It will instead scan the directories listed
+	in the <b>Paths</b> tab (much as the <b>Scan</b> button will) for manifest files 
+	and load the corresponding extensions. The drawback is that the user could not 
+	influence the order the extensions will appear in the editor the next time it is 
+	started. This option is turned off by default.
+	<p>
+	
+	<a href="#contents"><b>»</b> <i>back to top</i></a>
+	<p>
+	
+	
+	<p class="title"><a name="examples">Examples</a></p>
+	<p>
+	
+	<p class="sub">Color Chooser</p>
+	<p>
+	The actual color chooser extension. When extension's button is pressed the standard
+	color chooser dialog appears. If there are no entities selected the current color
+	is changed, if there are entitites selected their color is changed. If the choosing
+	is cancelled the respective color property is set to ByLayer.
+	<p>
+	<table>
+		<tr><td><img src="new.gif" border=0></td><td>
+		<a href="Colors.java">Colors.java</a><br>
+		</td></tr>
+		
+		<tr><td><img src="manifest.gif" border=0></td><td>
+		<a href="colors.manifest">colors.manifest</a><br>
+		</td></tr>
+	</table>
+	
+	<p>
+	
+	<a href="#contents"><b>»</b> <i>back to top</i></a>
+	<p>
+	
+	
+	<p class="title">Document Info</p>
+		<p>
+		Creation Date: 24/07/2003<br>
+		Author: <a href="mailto:aantov@users.sourceforge.net">Assen Antov</a><br>
+		Revision: 1<br>
+		Revision Date: 01/10/2003<br>
+		Revised By: <a href="mailto:aantov@users.sourceforge.net">Assen Antov</a><p>
+
+</body>
+
+</html>

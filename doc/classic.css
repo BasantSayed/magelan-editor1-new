@@ -1,0 +1,35 @@
+.title { margin-left:0; font-family: Arial; font-size: 9pt; 
+	font-weight: bold; color: #6666CC; background-color: #D0D0D0; 
+	background-position: center center; margin-top: 2px; 
+	margin-bottom: 2px; padding-top: 2px; padding-bottom: 2px;
+	width: 80%; padding-left:4px
+}
+.sub { margin-left:0; font-family: Arial; font-size: 9pt; 
+	font-weight: bold; color: #6666CC; background-color: #EEEEEE; 
+	background-position: center center; margin-top: 2px; 
+	margin-bottom: 2px; padding-top: 2px; padding-bottom: 2px;
+	width: 80%; padding-left:4px
+}
+body { width: 80%; margin-left: 10%; font-family: Arial; font-size: 9pt; color: #000000; }
+td {  font-family: Arial; font-size: 9pt}
+p {  width: 80%; margin-top: 9px; margin-bottom: 2px; padding-bottom: 2px; clip: rect(  2px )}
+A:link { text-decoration: none }
+A:active { text-decoration: none }
+A:visited { text-decoration: none }
+a: {color:#000099}
+a:link {color:#000099}
+a:visited {color:#000099}
+a:unvisited {color:#000099}
+a:hover {color:#000099; text-decoration: underline}
+.formlink {text-decoration: none; color: white}
+.hidden {display: none}
+.alert {font-weight: bold; color:#FFFFFF; background-color: #FF0000; background-position: center center; width: 40%;}
+.comment {color:#A0A0A0}
+
+UL {width: 90%; margin-top: 4px; margin-bottom: 0px; }
+LI {margin-top: 0px; margin-bottom: 0px; }
+
+INPUT, SELECT, TEXTAREA, RADIO { font-family: Tahoma; font-weight: bold; font-size:8pt; color: black; border-width:1; border-color:#AAAAAA; border-style:solid; }
+INPUT.radio {border-width: 0}
+INPUT.checkbox {border-width: 0}
+INPUT.submit {border-width:2; cursor: hand; background: white}

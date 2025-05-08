@@ -1,0 +1,8 @@
+#Class Manifest File
+#Sat Feb 12 13:02:00 EET 2005
+HelpPath=./help/ext_node.html
+Created-By=
+ClassName=org.magelan.transport.extension.AttachGeom
+Info=
+Manifest-Version=1.0
+ClassPath=C\:\\C Drive\\eclipse\\workspace\\transport\\bin;d\:\\magelan\\transport\\bin

@@ -1,0 +1,8 @@
+#Class Manifest File
+#Sun Dec 21 17:44:10 CET 2003
+HelpPath=./help/ext_MemoryMonitor.html
+Created-By=Eberhard Fahle (e.fahle@wayoda.org)
+ClassName=org.wayoda.magelan.MemMonitor
+Info=Monitor memory usage
+Manifest-Version=1.0
+ClassPath=.

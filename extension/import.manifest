@@ -1,0 +1,6 @@
+Created-By=
+HelpPath=./help/ext_import.html
+Info=
+ClassName=org.magelan.editor.extension.explorer.Import
+Manifest-Version=1.0
+ClassPath=.

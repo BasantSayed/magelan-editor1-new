@@ -1,0 +1,6 @@
+For news and updates visit the home of the Magelan project at "http://magelan.sourceforge.net".
+Open Magelan's help system by pressing F1. Help items may be editted by pressing the right mouse button on them. Notes and user-help screens may also be added to the help system the same way.
+To configure and deploy extensions go to "Extensions | Manage" dialog.
+To change language settings choose "Preferences | Edit Workspace", "Application" tab.
+To configure the editor choose "Preferences | Edit Workspace", "Editor" tab.
+Go to "Preferences | Look and Feel" to change the appearance of the editor. More Look and Feels can be added by simply declaring their class names in the L&F Manager and adding them to the ClassPath.

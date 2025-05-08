@@ -1,0 +1,8 @@
+#Class Manifest File
+#Sun Dec 14 18:20:26 CET 2003
+Created-By=magelan.editor.ClassManifest
+HelpPath=./help/ext_path.html
+Info=Creates a path entity.
+ClassName=org.magelan.editor.extension.NewPath
+Manifest-Version=1.0
+ClassPath=.

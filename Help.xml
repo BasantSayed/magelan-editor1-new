@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.5.0-beta2" class="java.beans.XMLDecoder"> 
+ <object class="javax.swing.tree.DefaultMutableTreeNode"> 
+  <void property="userObject"> 
+   <object class="org.magelan.surfer.resources.help.HelpItem"> 
+    <void property="description"> 
+     <string>Welcome to Magelan</string> 
+    </void> 
+    <void property="fileName"> 
+     <string>./help/welcome.html</string> 
+    </void> 
+    <void property="name"> 
+     <string>Welcome</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="javax.swing.tree.DefaultMutableTreeNode"> 
+    <void property="userObject"> 
+     <object class="org.magelan.surfer.resources.help.HelpItem"> 
+      <void property="description"> 
+       <string>Getting Started</string> 
+      </void> 
+      <void property="fileName"> 
+       <string>./help/start.html</string> 
+      </void> 
+      <void property="name"> 
+       <string>Getting Started</string> 
+      </void> 
+      <void property="iconName"> 
+       <string>./help/help16.gif</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void method="add"> 
+     <object class="javax.swing.tree.DefaultMutableTreeNode"> 
+      <void property="userObject"> 
+       <object class="org.magelan.surfer.resources.help.HelpItem"> 
+        <void property="description"> 
+         <string>Basic Editing</string> 
+        </void> 
+        <void property="fileName"> 
+         <string>./help/basics.html</string> 
+        </void> 
+        <void property="name"> 
+         <string>Basic Editing</string> 
+        </void> 
+        <void property="iconName"> 
+         <string>./help/help16.gif</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void method="add"> 
+     <object class="javax.swing.tree.DefaultMutableTreeNode"> 
+      <void property="userObject"> 
+       <object class="org.magelan.surfer.resources.help.HelpItem"> 
+        <void property="description"> 
+         <string>Help on help</string> 
+        </void> 
+        <void property="fileName"> 
+         <string>./help/help.html</string> 
+        </void> 
+        <void property="name"> 
+         <string>Using Help</string> 
+        </void> 
+        <void property="iconName"> 
+         <string>./help/help16.gif</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void method="add"> 
+     <object class="javax.swing.tree.DefaultMutableTreeNode"> 
+      <void property="userObject"> 
+       <object class="org.magelan.surfer.resources.help.HelpItem"> 
+        <void property="description"> 
+         <string>Assistance</string> 
+        </void> 
+        <void property="fileName"> 
+         <string>./help/assist.html</string> 
+        </void> 
+        <void property="name"> 
+         <string>Assistance</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="javax.swing.tree.DefaultMutableTreeNode"> 
+    <void property="userObject"> 
+     <object class="org.magelan.surfer.resources.help.HelpItem"> 
+      <void property="description"> 
+       <string>Editor Preferences</string> 
+      </void> 
+      <void property="fileName"> 
+       <string>./help/prefs.html</string> 
+      </void> 
+      <void property="name"> 
+       <string>Editor Preferences</string> 
+      </void> 
+      <void property="iconName"> 
+       <string>./help/wrench.gif</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void method="add"> 
+     <object class="javax.swing.tree.DefaultMutableTreeNode"> 
+      <void property="userObject"> 
+       <object class="org.magelan.surfer.resources.help.HelpItem"> 
+        <void property="description"> 
+         <string>Workspace Manager</string> 
+        </void> 
+        <void property="fileName"> 
+         <string>./help/workspace.html</string> 
+        </void> 
+        <void property="name"> 
+         <string>Workspace Manager</string> 
+        </void> 
+        <void property="iconName"> 
+         <string>./help/wrench.gif</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void method="add"> 
+     <object class="javax.swing.tree.DefaultMutableTreeNode"> 
+      <void property="userObject"> 
+       <object class="org.magelan.surfer.resources.help.HelpItem"> 
+        <void property="description"> 
+         <string>Setting the Look and Feel</string> 
+        </void> 
+        <void property="fileName"> 
+         <string>./help/laf.html</string> 
+        </void> 
+        <void property="name"> 
+         <string>Look and Feel</string> 
+        </void> 
+        <void property="iconName"> 
+         <string>./help/wrench.gif</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void method="add"> 
+     <object class="javax.swing.tree.DefaultMutableTreeNode"> 
+      <void property="userObject"> 
+       <object class="org.magelan.surfer.resources.help.HelpItem"> 
+        <void property="description"> 
+         <string>Setting the ClassPath</string> 
+        </void> 
+        <void property="fileName"> 
+         <string>./help/classpath.html</string> 
+        </void> 
+        <void property="name"> 
+         <string>ClassPath</string> 
+        </void> 
+        <void property="iconName"> 
+         <string>./help/path.gif</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="javax.swing.tree.DefaultMutableTreeNode"> 
+    <void property="userObject"> 
+     <object class="org.magelan.surfer.resources.help.HelpItem"> 
+      <void property="description"> 
+       <string>Using Extensions</string> 
+      </void> 
+      <void property="fileName"> 
+       <string>./help/ext.html</string> 
+      </void> 
+      <void property="name"> 
+       <string>Using Extensions</string> 
+      </void> 
+      <void property="iconName"> 
+       <string>./help/bluegear.gif</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void method="add"> 
+     <object class="javax.swing.tree.DefaultMutableTreeNode"> 
+      <void property="userObject"> 
+       <object class="org.magelan.surfer.resources.help.HelpItem"> 
+        <void property="description"> 
+         <string>Configuring extensions</string> 
+        </void> 
+        <void property="fileName"> 
+         <string>./help/ext_configure.html</string> 
+        </void> 
+        <void property="name"> 
+         <string>Configuring</string> 
+        </void> 
+        <void property="iconName"> 
+         <string>./help/bluegear.gif</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void method="add"> 
+     <object class="javax.swing.tree.DefaultMutableTreeNode"> 
+      <void property="userObject"> 
+       <object class="org.magelan.surfer.resources.help.HelpItem"> 
+        <void property="description"> 
+         <string>Deployment of extensions</string> 
+        </void> 
+        <void property="fileName"> 
+         <string>./help/ext_deployment.html</string> 
+        </void> 
+        <void property="name"> 
+         <string>Deployment</string> 
+        </void> 
+        <void property="iconName"> 
+         <string>./help/bluegear.gif</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="javax.swing.tree.DefaultMutableTreeNode"> 
+    <void property="userObject"> 
+     <object class="org.magelan.surfer.resources.help.HelpItem"> 
+      <void property="description"> 
+       <string>Reporting Bugs</string> 
+      </void> 
+      <void property="fileName"> 
+       <string>./help/known.html</string> 
+      </void> 
+      <void property="name"> 
+       <string>Reporting Bugs</string> 
+      </void> 
+      <void property="iconName"> 
+       <string>./help/bug.gif</string> 
+      </void> 
+     </object> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="javax.swing.tree.DefaultMutableTreeNode"> 
+    <void property="userObject"> 
+     <object class="org.magelan.surfer.resources.help.HelpItem"> 
+      <void property="description"> 
+       <string>Authors</string> 
+      </void> 
+      <void property="fileName"> 
+       <string>./help/contributors.html</string> 
+      </void> 
+      <void property="name"> 
+       <string>Authors</string> 
+      </void> 
+     </object> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="javax.swing.tree.DefaultMutableTreeNode"> 
+    <void property="userObject"> 
+     <object class="org.magelan.surfer.resources.help.HelpItem"> 
+      <void property="description"> 
+       <string>License</string> 
+      </void> 
+      <void property="fileName"> 
+       <string>./help/license.html</string> 
+      </void> 
+      <void property="name"> 
+       <string>License</string> 
+      </void> 
+     </object> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="javax.swing.tree.DefaultMutableTreeNode"> 
+    <void property="userObject"> 
+     <object class="org.magelan.surfer.resources.help.HelpItem"> 
+      <void property="description"> 
+       <string>Known Problems</string> 
+      </void> 
+      <void property="fileName"> 
+       <string>./help/problems.html</string> 
+      </void> 
+      <void property="name"> 
+       <string>Known Problems</string> 
+      </void> 
+      <void property="iconName"> 
+       <string>./help/bug.gif</string> 
+      </void> 
+     </object> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+</java> 

@@ -1,0 +1,35 @@
+body { width: 80%; margin-left: 10%; font-family: Arial; font-size: 9pt; color: #000000; }
+td {  font-family: Arial; font-size: 9pt}
+p { margin-top: 5px; margin-bottom: 2px; padding-bottom: 2px; clip: rect(  2px )}
+A:link { text-decoration: none }
+A:active { text-decoration: none }
+A:visited { text-decoration: none }
+a: {color:#000099}
+a:link {color:#000099}
+a:visited {color:#000099}
+a:unvisited {color:#000099}
+a:hover {color:#000099; text-decoration: underline}
+
+H1 {color:#000099}
+H2 {color:#000099}
+H3 {color:#000099}
+
+/* Table colors */
+.TableHeadingColor     { background: #EAEAEA } /* Dark mauve */
+.TableSubHeadingColor  { background: #EAEAEA } /* Light mauve */
+.TableRowColor         { background: #FFFFFF } /* White */
+
+/* Font used in left-hand frame lists */
+.FrameTitleFont   { font-size: 100%; font-family: Helvetica, Arial, sans-serif }
+.FrameHeadingFont { font-size:  90%; font-family: Helvetica, Arial, sans-serif }
+.FrameItemFont    { font-size:  90%; font-family: Helvetica, Arial, sans-serif }
+
+/* Navigation bar fonts and colors */
+.NavBarCell1    { background-color:#EEEEFF;} /* Light mauve */
+.NavBarCell1Rev { background-color:#00008B;} /* Dark Blue */
+.NavBarFont1    { font-family: Arial, Helvetica, sans-serif; color:#000000;}
+.NavBarFont1Rev { font-family: Arial, Helvetica, sans-serif; color:#FFFFFF;}
+
+.NavBarCell2    { font-family: Arial, Helvetica, sans-serif; background-color:#FFFFFF;}
+.NavBarCell3    { font-family: Arial, Helvetica, sans-serif; background-color:#FFFFFF;}
+

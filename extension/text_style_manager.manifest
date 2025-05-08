@@ -1,0 +1,6 @@
+Created-By=
+HelpPath=./help/ext_text_style_manager.html
+Info=A dialog to add, remove and edit the text styles of a drawing.
+ClassName=org.magelan.editor.extension.TextStyleManager
+Manifest-Version=1.0
+ClassPath=.

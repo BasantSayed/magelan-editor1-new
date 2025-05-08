@@ -1,0 +1,18 @@
+H1 { font-family: Arial; font-size: 14pt; font-weight: bold; color: #000077; 
+	margin-top: 22px; margin-bottom: 4px;
+	border-width: 1; border-style: solid; border-color: #FFFFFF #FFFFFF #000077 #FFFFFF
+}
+H2 { font-family: Arial; font-size: 12pt; font-weight: bold; color: #000077; 
+	margin-top: 22px; margin-bottom: 4px;
+	border-width: 1; border-style: solid; border-color: #FFFFFF #FFFFFF #000077 #FFFFFF
+}
+H3 { font-family: Arial; font-size: 12pt; font-weight: bold; color: #000077; 
+	margin-top: 16px; margin-bottom: 4px;
+}
+strong { font-weight: bold; color: #000077; }
+body { font-family: Arial; font-size: 12pt; color: #000000; 
+	margin-top: 0px; margin-bottom: 16px; margin-left: 6px;
+}
+.title { font-family: Arial; font-size: 14pt; font-weight: bold; color: #000077; 
+	margin-top: 0px; margin-bottom: 0px;
+}

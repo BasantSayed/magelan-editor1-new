@@ -1,0 +1,8 @@
+#Class Manifest File
+#Sat Mar 06 15:44:32 CET 2004
+HelpPath=./help/ext_rect.html
+Created-By=org.magelan.editor.ClassManifest
+ClassName=org.magelan.editor.extension.NewRect
+Info=Class file 
+Manifest-Version=1.0
+ClassPath=.

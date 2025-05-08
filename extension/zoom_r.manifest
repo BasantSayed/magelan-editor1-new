@@ -1,0 +1,8 @@
+#Class Manifest File
+#Mon Jul 07 20:52:27 CEST 2003
+HelpPath=./help/ext_zoom_r.html
+Created-By=magelan.editor.ClassManifest
+ClassName=org.magelan.editor.extension.ZoomRealtime
+Info=The zoom realtime command.
+Manifest-Version=1.0
+ClassPath=.

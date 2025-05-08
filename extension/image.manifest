@@ -1,0 +1,6 @@
+Created-By=
+HelpPath=./help/ext_image.html
+Info=Adds an image entity to the drawing.
+ClassName=org.magelan.editor.extension.NewImage
+Manifest-Version=1.0
+ClassPath=.

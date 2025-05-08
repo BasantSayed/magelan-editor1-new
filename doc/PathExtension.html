@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<head>
+  <title>Magelan Editor Framework (editor 1.0)</title>
+  <meta http-equiv="Content-Type" content="text/html">
+  <link href="classic.css" rel="stylesheet" type="text/css">
+</head>
+
+<p class="title"><font face="Tahoma" size=+1>
+		Magelan Graphics Editor Framework (editor 1.0)
+	</font></p>
+	<p class="sub"><font face="Arial" size=+1>
+		Path Extension
+	</font></p>
+	<p>
+	
+	<p class="title"><a name="contents">Contents</a></p>
+	<br>
+	<ul>
+		<li><a href="#scope">Scope</a></li>
+		<li><a href="#usage">Usage</a></li>
+		<li><a href="#popup">Popup Menu</a></li>
+	</ul>
+	<p>
+	
+	<p class="title"><a name="scope">Scope</a></p>
+	<p>
+
+The aim of the path extension is to give the user the ability to
+create paths equivalent to the paths in SVG.
+<p>
+A path in SVG is described using the concept of a current point.
+In an analogy with drawing on paper,
+the current point can be thought of as the location of the pen.
+The position of the pen can be changed, and the outline of a shape
+(open or closed) can be traced by dragging the pen in
+either straight lines or curves.
+<p>
+Paths represent an outline of an object which is defined in terms of:
+<UL>
+<LI>moveto (set a new current point)</LI>
+<LI>lineto (draw a straight line)</LI>
+<LI>curveto (draw a curve using a cubic bezier)</LI>
+<LI>arc (elliptical or circular arc)</LI>
+<LI>closepath (close the current shape by
+drawing a line to the last moveto)
+</UL>
+<p>
+Compound paths (i.e., a path with subpaths,
+each consisting of a
+single moveto followed by one or more line or curve operations)
+are possible to allow effects such as "donut holes" in objects.
+</p>
+<br>
+<p class="sub">Example</p>
+<XMP><path d="M 100 100 L 140 100 L 120 140 z"/></XMP>
+<p>
+
+	<a href="#contents"><b>»</b> <i>back to top</i></a>
+	<p>
+	
+
+	<p class="title"><a name="usage">Usage</a></p>
+	
+	<p class="sub">New Path</p>
+	<p>
+
+When you start a path entity,if some paths already exist a dialog box
+give you the possibility to recall a previous path for modifications
+if no Id is given the internal name will be formed with "path" plus the
+entity number eg: path2
+<CENTER>
+<img src="choice.gif">
+</CENTER>
+<p>
+
+	<a href="#contents"><b>»</b> <i>back to top</i></a>
+	<p>
+
+
+
+	<p class="title"><a name="popup">Popup Menu</a></p>
+	<p>
+	
+ <UL>
+ <LI><b>Image</b><p>
+The user can load an image on background to help in drawing.
+ <LI><b>MoveTo</b><p>
+The "moveto" command establish a new current point.
+The effect is as if the "pen" were lifted and moved to a new location.
+ A path data segment must begin with the "moveto" command
+<br>
+ Line mode is the default operation following the initial Move unless
+ a different operation is selected.
+ </LI>
+ <LI><b>Insert</b><p>
+ To insert a command after or before the point selected, this point can only be
+ either a start or an end point not a control point.
+ </LI>
+ <LI><b>Arc</b><p>
+ An elliptical arc segment draws a segment of an ellipse.
+ </LI>
+ <LI><b>Cubic curve</b><p>
+ A cubic bezier segment is defined by a start point, an end point, and two control points.
+ <br>A quadratic bezier segment is defined by a start point, an end point, and one control point.
+ </LI>
+ <LI><b>Close</b><p>
+Will close the last point to the first point to create a closed path
+The Path can also be terminated and closed by selecting the first point.
+The "closepath"  causes an automatic straight line to be drawn from
+the current point to the initial point of the current subpath.
+
+ </LI>
+ <LI><b>Change origin</b><p>
+ Normally the points are relative to (0,0), but in many case the user to
+ help in positionning or to rotate the path, want to use either the
+ center point or the left low corner of the bounding box.
+ </LI>
+ <LI><b>New Path</b>
+ </LI>
+ <LI><b>End</b><p>
+ Leave the drawing in the state open
+ </LI>
+</UL>
+
+<CENTER>
+<img src="curve2.gif">
+</CENTER>
+<P>
+
+	<p class="sub">Example during drawing</p>
+	<p>
+	
+  A small cross is used to mark the points.
+<CENTER>
+<img src="curve1.gif">
+</CENTER>
+<P>
+
+	<p class="sub">Selection Modification</p>
+	<p>
+	
+  As soon as the user select a point a start or an end(easier) it's the normal
+  Magelan modification handling
+<CENTER>
+<img src="curve3.gif">
+</CENTER>
+<P>
+
+	<p class="sub">Special gestures</p>
+	<p>
+
+If the cursor is on a point the cursor change to "CROSS_HAIR".
+If you use Ctrl plus right button you get the move cursor and you can drag the
+point.<br>
+If you use shift plus right button you delete the point if it is a start or end point
+and no the first moveto.
+<P>
+
+	<a href="#contents"><b>»</b> <i>back to top</i></a>
+	<p>
+
+<p class="title">Document Info</p>
+<p>
+		
+   Creation Date: 29/08/2003<br>
+   Author: <a href="mailto:beDesprez@wanadoo.fr">Bernard Desprez</a><br>
+   Revision: 1.1<br>
+   Revision Date:02/10/2003 <br>
+   Revised By: <a href="mailto:beDesprez@wanadoo.fr">Bernard Desprez</a><p>
+
+</BODY></HTML>

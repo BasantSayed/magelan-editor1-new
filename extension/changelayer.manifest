@@ -1,0 +1,8 @@
+#Class Manifest File
+#Wed Jul 23 13:23:55 EEST 2003
+Created-By=magelan.editor.ClassManifest
+HelpPath=./help/ext_changelayer.html
+Info=The change layer combo list.
+ClassName=org.magelan.editor.extension.ChangeLayer
+Manifest-Version=1.0
+ClassPath=.
